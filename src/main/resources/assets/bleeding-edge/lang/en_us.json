@@ -1,0 +1,13 @@
+{
+  "itemgroup.bleeding-edge": "Bleeding Edge",
+  "item.bleeding-edge.tacticore": "Personal Tacticore",
+  "item.bleeding-edge.cloaking_device": "Cloaking Device",
+  "item.bleeding-edge.shield_generator": "Shield Generator",
+  "item.bleeding-edge.remote_detonator": "Remote Detonator",
+  "item.bleeding-edge.night_vision_goggles": "Night Vision Goggles",
+  "item.bleeding-edge.hover_pack": "Hover Pack",
+  "item.bleeding-edge.hover_mine": "Hover Mine",
+  "effect.bleeding-edge.cloaked": "Cloaked",
+  "tooltip.bleeding-edge.applied-item.title": "Applicable",
+  "tooltip.bleeding-edge.applied-item.description": "Can be applied to other items"
+}
