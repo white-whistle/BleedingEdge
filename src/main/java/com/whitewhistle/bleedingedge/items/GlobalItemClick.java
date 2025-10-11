@@ -22,7 +22,19 @@ public class GlobalItemClick {
         if (clickType == ClickType.RIGHT) {
             if (!stack.isEmpty() && !(item instanceof AppliedItem) && cursorItem instanceof AppliedItem appliedItem) {
                 if (appliedItem.apply(cursorStack, stack)) {
-                    cursorStack.decrement(1);
+                    if (appliedItem.shouldConsume(cursorStack, stack)) {
+                        cursorStack.decrement(1);
+                    }
+                    player.playSound(SoundEvents.BLOCK_END_PORTAL_FRAME_FILL, 0.5f + r.nextFloat(), 0.5f + r.nextFloat());
+                } else {
+                    player.playSound(SoundEvents.BLOCK_FIRE_EXTINGUISH, 0.5f + r.nextFloat(), 0.5f + r.nextFloat());
+                }
+                return Optional.of(true);
+            }
+
+            if (cursorStack.isEmpty() && item instanceof ToggledItem toggledItem) {
+                var enabled = toggledItem.toggle(stack);
+                if (enabled) {
                     player.playSound(SoundEvents.BLOCK_END_PORTAL_FRAME_FILL, 0.5f + r.nextFloat(), 0.5f + r.nextFloat());
                 } else {
                     player.playSound(SoundEvents.BLOCK_FIRE_EXTINGUISH, 0.5f + r.nextFloat(), 0.5f + r.nextFloat());

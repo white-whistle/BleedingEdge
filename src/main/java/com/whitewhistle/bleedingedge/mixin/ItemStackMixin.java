@@ -1,6 +1,7 @@
 package com.whitewhistle.bleedingedge.mixin;
 
 import com.whitewhistle.bleedingedge.items.GlobalItemClick;
+import com.whitewhistle.bleedingedge.items.ToggledItem;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.StackReference;
@@ -36,6 +37,10 @@ public class ItemStackMixin {
         var item = stack.getItem();
 
         // generic append tooltip onto applied items
+        if (item instanceof ToggledItem toggledItem) {
+            var enabled = toggledItem.isEnabled(stack);
+            tooltip.add(Text.literal("Toggled: " + enabled));
+        }
     }
 
 }

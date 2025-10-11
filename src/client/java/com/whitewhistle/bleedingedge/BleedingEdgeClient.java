@@ -1,10 +1,13 @@
 package com.whitewhistle.bleedingedge;
 
+import com.whitewhistle.bleedingedge.gui.particles.GuiParticleRenderer;
+import com.whitewhistle.bleedingedge.hooks.ClientClickEffects;
 import net.fabricmc.api.ClientModInitializer;
 
 public class BleedingEdgeClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
-		// This entrypoint is suitable for setting up client-specific logic, such as rendering.
+		GuiParticleRenderer.INSTANCE.init();
+		ClientClickEffects.register();
 	}
 }

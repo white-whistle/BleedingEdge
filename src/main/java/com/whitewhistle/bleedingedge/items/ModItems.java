@@ -1,14 +1,12 @@
 package com.whitewhistle.bleedingedge.items;
 
 import com.whitewhistle.bleedingedge.BleedingEdge;
+import com.whitewhistle.bleedingedge.items.impl.CloakingDeviceItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
 
 import java.util.LinkedList;
 
@@ -19,7 +17,7 @@ public class ModItems {
 
     // gadgets
     public static final Item TACTICORE = registerItem("tacticore", new Item(new FabricItemSettings().maxCount(1)));
-    public static final Item CLOAKING_DEVICE = registerItem("cloaking_device", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item CLOAKING_DEVICE = registerItem("cloaking_device", new CloakingDeviceItem(new FabricItemSettings().maxCount(1)));
     public static final Item SHIELD_GENERATOR = registerItem("shield_generator", new Item(new FabricItemSettings().maxCount(1)));
     public static final Item REMOTE_DETONATOR = registerItem("remote_detonator", new Item(new FabricItemSettings().maxCount(1)));
     public static final Item NIGHT_VISION_GOGGLES = registerItem("night_vision_goggles", new Item(new FabricItemSettings().maxCount(1)));

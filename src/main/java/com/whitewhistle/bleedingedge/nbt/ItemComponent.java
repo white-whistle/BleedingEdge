@@ -5,11 +5,17 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Identifier;
 
 import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
-public record ItemComponent<T>(Identifier identifier, NbtSerializable<T> codec) {
+public record ItemComponent<T>(Identifier identifier, NbtSerializable<T> codec, Supplier<T> create) {
+    public ItemComponent(Identifier identifier, NbtSerializable<T> codec) {
+        this(identifier, codec, codec::create);
+    }
+
     public T get(NbtCompound nbt) {
         if (nbt == null || !nbt.contains(identifier.toString())) {
-            return codec.create();
+            return this.create.get();
         }
 
         var tag = nbt.get(identifier.toString());
@@ -53,5 +59,15 @@ public record ItemComponent<T>(Identifier identifier, NbtSerializable<T> codec) 
         consumer.accept(data);
 
         set(stack, data);
+    }
+
+    public T map(ItemStack stack, Function<T, T> mapper) {
+        var data = get(stack);
+
+        data = mapper.apply(data);
+
+        set(stack, data);
+
+        return data;
     }
 }
