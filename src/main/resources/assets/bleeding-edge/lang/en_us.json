@@ -8,6 +8,7 @@
   "item.bleeding-edge.hover_pack": "Hover Pack",
   "item.bleeding-edge.hover_mine": "Hover Mine",
   "effect.bleeding-edge.cloaked": "Cloaked",
+  "effect.bleeding-edge.ir_vision": "IR Vision",
   "tooltip.bleeding-edge.applied-item.title": "Applicable",
   "tooltip.bleeding-edge.applied-item.description": "Can be applied to other items"
 }

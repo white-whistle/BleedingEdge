@@ -20,6 +20,7 @@ import static com.whitewhistle.bleedingedge.BleedingEdge.MOD_ID;
 
 public class ModStatusEffects {
     public static final StatusEffect CLOAKED = registerStatusEffect("cloaked", new AttributeStatusEffect(UuidUtil.from("cloaked"),StatusEffectCategory.BENEFICIAL, 0x000000, ModEntityAttributes.CLOAKING, i -> i+1));
+    public static final StatusEffect IR_VISION = registerStatusEffect("ir_vision", new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0x000000));
 
     // ============= impl ==================
 

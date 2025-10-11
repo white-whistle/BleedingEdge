@@ -2,6 +2,7 @@ package com.whitewhistle.bleedingedge.items;
 
 import com.whitewhistle.bleedingedge.BleedingEdge;
 import com.whitewhistle.bleedingedge.items.impl.CloakingDeviceItem;
+import com.whitewhistle.bleedingedge.items.impl.NightVisionGogglesItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -20,7 +21,7 @@ public class ModItems {
     public static final Item CLOAKING_DEVICE = registerItem("cloaking_device", new CloakingDeviceItem(new FabricItemSettings().maxCount(1)));
     public static final Item SHIELD_GENERATOR = registerItem("shield_generator", new Item(new FabricItemSettings().maxCount(1)));
     public static final Item REMOTE_DETONATOR = registerItem("remote_detonator", new Item(new FabricItemSettings().maxCount(1)));
-    public static final Item NIGHT_VISION_GOGGLES = registerItem("night_vision_goggles", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item NIGHT_VISION_GOGGLES = registerItem("night_vision_goggles", new NightVisionGogglesItem(new FabricItemSettings().maxCount(1)));
     public static final Item HOVER_PACK = registerItem("hover_pack", new Item(new FabricItemSettings().maxCount(1)));
     public static final Item HOVER_MINE = registerItem("hover_mine", new Item(new FabricItemSettings().maxCount(1)));
 

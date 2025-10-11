@@ -1,0 +1,15 @@
+{
+  "targets": ["swap"],
+  "passes": [
+    {
+      "name": "bleeding-edge:grayscale",
+      "intarget": "minecraft:main",
+      "outtarget": "swap"
+    },
+    {
+      "name": "blit",
+      "intarget": "swap",
+      "outtarget": "minecraft:main"
+    }
+  ]
+}
