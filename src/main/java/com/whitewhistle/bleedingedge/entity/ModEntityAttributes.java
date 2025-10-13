@@ -16,8 +16,16 @@ public class ModEntityAttributes {
             8 // maximum
     ).setTracked(true));
 
+    public static final EntityAttribute SHIELD = register("shield", new ClampedEntityAttribute(
+            "attribute.bleeding-edge.generic.shield",
+            0.0,   // default value
+            0.0,   // minimum
+            256 // maximum
+    ).setTracked(true));
+
     public static final List<EntityAttribute> LIVING_ENTITY_ADDITIONAL_ATTRIBUTES = List.of(
-            CLOAKING
+            CLOAKING,
+            SHIELD
     );
 
     public static EntityAttribute register(String name, EntityAttribute attribute) {

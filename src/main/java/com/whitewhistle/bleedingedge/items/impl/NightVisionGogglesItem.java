@@ -1,41 +1,32 @@
 package com.whitewhistle.bleedingedge.items.impl;
 
 import com.whitewhistle.bleedingedge.effects.ModStatusEffects;
-import com.whitewhistle.bleedingedge.items.AppliedItem;
 import com.whitewhistle.bleedingedge.items.ToggledItem;
 import com.whitewhistle.bleedingedge.nbt.ModComponents;
-import net.minecraft.entity.Entity;
+import dev.emi.trinkets.api.SlotReference;
+import dev.emi.trinkets.api.TrinketItem;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
 
-public class NightVisionGogglesItem extends ArmorItem implements AppliedItem, ToggledItem {
+public class NightVisionGogglesItem extends TrinketItem implements ToggledItem {
     public NightVisionGogglesItem(Settings settings) {
-        super(ArmorMaterials.IRON, Type.HELMET, settings);
+        super(settings);
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        super.inventoryTick(stack, world, entity, slot, selected);
+    public void tick(ItemStack stack, SlotReference slot, LivingEntity entity) {
+        super.tick(stack, slot, entity);
 
-        if (entity instanceof LivingEntity livingEntity) {
-            if (livingEntity.getEquippedStack(this.getSlotType()).isOf(this)) {
-                if (ModComponents.ENABLED.get(stack)) {
-                    livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 20, 0, true, false, false));
-                    livingEntity.addStatusEffect(new StatusEffectInstance(ModStatusEffects.IR_VISION, 20, 0, true, false, false));
-                } else {
-                    livingEntity.removeStatusEffect(ModStatusEffects.IR_VISION);
-                }
-            }
+        if (entity.hasStatusEffect(ModStatusEffects.EMP)) return;
+
+        if (ModComponents.ENABLED.get(stack)) {
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 20, 0, true, false, false));
+            entity.addStatusEffect(new StatusEffectInstance(ModStatusEffects.IR_VISION, 20, 0, true, false, false));
+        } else {
+            entity.removeStatusEffect(ModStatusEffects.IR_VISION);
         }
     }
 
-    @Override
-    public boolean apply(ItemStack stack, ItemStack target) {
-        return false;
-    }
 }

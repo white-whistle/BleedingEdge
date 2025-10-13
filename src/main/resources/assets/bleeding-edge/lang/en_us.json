@@ -9,6 +9,7 @@
   "item.bleeding-edge.hover_mine": "Hover Mine",
   "effect.bleeding-edge.cloaked": "Cloaked",
   "effect.bleeding-edge.ir_vision": "IR Vision",
+  "effect.bleeding-edge.emp": "EMP",
   "tooltip.bleeding-edge.applied-item.title": "Applicable",
   "tooltip.bleeding-edge.applied-item.description": "Can be applied to other items"
 }

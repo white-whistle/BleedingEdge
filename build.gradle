@@ -18,6 +18,11 @@ repositories {
 	// for more information about repositories.
 
 	maven {
+		name = "TerraformersMC"
+		url = "https://maven.terraformersmc.com/"
+	}
+
+	maven {
 		name = 'Ladysnake Mods'
 		url = 'https://maven.ladysnake.org/releases'
 		content {
@@ -56,6 +61,12 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	modImplementation "org.ladysnake:satin:${project.satin_version}"
+
+	modImplementation "dev.emi:trinkets:${project.trinkets_version}"
+
+	// PAL
+	modImplementation "io.github.ladysnake:PlayerAbilityLib:${project.pal_version}"
+	include "io.github.ladysnake:PlayerAbilityLib:${project.pal_version}"
 }
 
 processResources {
