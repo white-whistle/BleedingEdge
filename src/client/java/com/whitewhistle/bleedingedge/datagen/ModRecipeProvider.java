@@ -1,11 +1,13 @@
 package com.whitewhistle.bleedingedge.datagen;
 
+import com.whitewhistle.bleedingedge.items.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.RecipeProvider;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
@@ -18,6 +20,12 @@ import static com.whitewhistle.bleedingedge.BleedingEdge.MOD_ID;
 public class ModRecipeProvider extends FabricRecipeProvider {
     public ModRecipeProvider(FabricDataOutput output) {
         super(output);
+    }
+
+    public void addSmeltingRecipe(Consumer<RecipeJsonProvider> exporter, Item from, Item to, float xp) {
+        RecipeProvider.offerSmelting(exporter, List.of(from), RecipeCategory.MISC, to, xp, 200, MOD_ID);
+        RecipeProvider.offerBlasting(exporter, List.of(from), RecipeCategory.MISC, to, xp, 100, MOD_ID);
+        // TODO: smelter?
     }
 
     public void addFoodCookingRecipe(Consumer<RecipeJsonProvider> exporter, Item from, Item to, float xp) {
@@ -49,6 +57,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
+
+        addSmeltingRecipe(exporter, Items.COAL, ModItems.CARBON_INGOT, 0.2f);
         // // smelting
         // addFoodCookingRecipe(exporter, Items.EGG, ModItems.FRIED_EGG, 0.15F);
         // addFoodCookingRecipe(exporter, ModItems.BREAD_SLICE, ModItems.TOAST, 0.1F);

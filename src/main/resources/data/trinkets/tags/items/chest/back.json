@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "bleeding-edge:shield_generator",
+    "bleeding-edge:cloaking_device",
     "bleeding-edge:hover_pack"
   ]
 }

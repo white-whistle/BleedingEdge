@@ -1,6 +1,7 @@
 package com.whitewhistle.bleedingedge;
 
 import com.whitewhistle.bleedingedge.effects.ModStatusEffects;
+import com.whitewhistle.bleedingedge.items.ModFuelItems;
 import com.whitewhistle.bleedingedge.items.ModItemGroups;
 import com.whitewhistle.bleedingedge.items.ModItems;
 import com.whitewhistle.bleedingedge.nbt.ModComponents;
@@ -23,7 +24,8 @@ public class BleedingEdge implements ModInitializer {
         ModComponents.register();
         ModStatusEffects.registerEffects();
         ModItemGroups.registerGroups();
+        ModFuelItems.init();
 
-        LOGGER.info("++Blessing from the gun god++");
+        LOGGER.info("++ they wont see you coming ++");
     }
 }

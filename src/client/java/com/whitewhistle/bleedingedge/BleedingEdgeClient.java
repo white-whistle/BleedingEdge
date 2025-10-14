@@ -11,6 +11,6 @@ public class BleedingEdgeClient implements ClientModInitializer {
 		GuiParticleRenderer.INSTANCE.init();
 		ClientClickEffects.register();
 		ModShaders.register();
-
+		ModModelPredicateProvider.registerPredicates();
 	}
 }

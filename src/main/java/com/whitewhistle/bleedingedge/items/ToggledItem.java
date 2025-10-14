@@ -2,6 +2,7 @@ package com.whitewhistle.bleedingedge.items;
 
 import com.whitewhistle.bleedingedge.common.ClickEffects;
 import com.whitewhistle.bleedingedge.nbt.ModComponents;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 
 public interface ToggledItem {
@@ -14,7 +15,7 @@ public interface ToggledItem {
         return enabled;
     }
 
-    default boolean isEnabled(ItemStack stack) {
+    default boolean isEnabled(LivingEntity livingEntity, ItemStack stack) {
         return ModComponents.ENABLED.get(stack);
     }
 }

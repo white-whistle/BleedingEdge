@@ -22,6 +22,7 @@ public class ModStatusEffects {
     public static final StatusEffect CLOAKED = registerStatusEffect("cloaked", new AttributeStatusEffect(UuidUtil.from("cloaked"),StatusEffectCategory.BENEFICIAL, 0x000000, ModEntityAttributes.CLOAKING, i -> i+1));
     public static final StatusEffect IR_VISION = registerStatusEffect("ir_vision", new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0x000000));
     public static final StatusEffect EMP = registerStatusEffect("emp", new ModStatusEffect(StatusEffectCategory.HARMFUL, 0x000000));
+    public static final StatusEffect ANTIDOTE = registerStatusEffect("antidote", new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0x000000));
 
     // cooldown
     public static final StatusEffect SHIELD_COOLDOWN = registerStatusEffect("shield_cooldown", new ModStatusEffect(StatusEffectCategory.NEUTRAL, 0x000000));

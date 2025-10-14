@@ -1,6 +1,8 @@
 package com.whitewhistle.bleedingedge.items;
 
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
 
 public interface AppliedItem {
     /**
@@ -9,7 +11,7 @@ public interface AppliedItem {
      * @param target item stack to apply the item to
      * @return true if the item was applied successfully
      */
-    boolean apply(ItemStack stack, ItemStack target);
+    boolean apply(PlayerEntity player, ItemStack stack, ItemStack target);
 
     /**
      * called to determine if to decrement the AppliedItem stack after the item was applied
@@ -19,5 +21,9 @@ public interface AppliedItem {
      */
     default boolean shouldConsume(ItemStack stack, ItemStack target) {
         return true;
+    }
+
+    default Text getTooltip(ItemStack stack) {
+        return Text.translatable("tooltip.bleeding-edge.applied-item.description");
     }
 }

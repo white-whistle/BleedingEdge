@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "bleeding-edge:item/breach_hammer_open"
+  },
+  "overrides": [
+    {
+      "predicate": { "bleeding-edge:charged": 1 },
+      "model": "bleeding-edge:item/breach_hammer_charged"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 package com.whitewhistle.bleedingedge.items;
 
+import com.whitewhistle.bleedingedge.items.impl.SlotItem;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.StackReference;
 import net.minecraft.item.ItemStack;
@@ -21,7 +22,7 @@ public class GlobalItemClick {
 
         if (clickType == ClickType.RIGHT) {
             if (!stack.isEmpty() && !(item instanceof AppliedItem) && cursorItem instanceof AppliedItem appliedItem) {
-                if (appliedItem.apply(cursorStack, stack)) {
+                if (appliedItem.apply(player, cursorStack, stack)) {
                     if (appliedItem.shouldConsume(cursorStack, stack)) {
                         cursorStack.decrement(1);
                     }
@@ -40,6 +41,12 @@ public class GlobalItemClick {
                     player.playSound(SoundEvents.BLOCK_FIRE_EXTINGUISH, 0.5f + r.nextFloat(), 0.5f + r.nextFloat());
                 }
                 return Optional.of(true);
+            }
+
+            if (item instanceof SlotItem slotItem) {
+                if (slotItem.applyItemToSlot(player, stack, cursorStackReference)) {
+                    return Optional.of(true);
+                }
             }
         }
 

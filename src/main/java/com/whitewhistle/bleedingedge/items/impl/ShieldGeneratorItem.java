@@ -3,8 +3,7 @@ package com.whitewhistle.bleedingedge.items.impl;
 import com.google.common.collect.Multimap;
 import com.whitewhistle.bleedingedge.effects.ModStatusEffects;
 import com.whitewhistle.bleedingedge.entity.ModEntityAttributes;
-import com.whitewhistle.bleedingedge.items.ToggledItem;
-import com.whitewhistle.bleedingedge.nbt.ModComponents;
+import com.whitewhistle.bleedingedge.items.ElectricToggledItem;
 import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.TrinketItem;
 import net.minecraft.entity.LivingEntity;
@@ -14,7 +13,7 @@ import net.minecraft.item.ItemStack;
 
 import java.util.UUID;
 
-public class ShieldGeneratorItem extends TrinketItem implements ToggledItem {
+public class ShieldGeneratorItem extends TrinketItem implements ElectricToggledItem {
 
     public ShieldGeneratorItem(Settings settings) {
         super(settings);
@@ -25,8 +24,7 @@ public class ShieldGeneratorItem extends TrinketItem implements ToggledItem {
         super.tick(stack, slot, entity);
 
         if (entity.hasStatusEffect(ModStatusEffects.SHIELD_COOLDOWN)) return;
-        if (entity.hasStatusEffect(ModStatusEffects.EMP)) return;
-        if (!ModComponents.ENABLED.get(stack)) return;
+        if (!this.isEnabled(entity, stack)) return;
 
         var currentShield = entity.getAbsorptionAmount();
         var maxShield = entity.getAttributeValue(ModEntityAttributes.SHIELD);

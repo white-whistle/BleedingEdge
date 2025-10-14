@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "bleeding-edge:item/liquid_cooling"
+  }
+}

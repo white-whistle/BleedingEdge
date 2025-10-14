@@ -9,8 +9,8 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
 
-public class NightVisionGogglesItem extends TrinketItem implements ElectricToggledItem {
-    public NightVisionGogglesItem(Settings settings) {
+public class SteelKidneyItem extends TrinketItem implements ElectricToggledItem {
+    public SteelKidneyItem(Settings settings) {
         super(settings);
     }
 
@@ -19,11 +19,7 @@ public class NightVisionGogglesItem extends TrinketItem implements ElectricToggl
         super.tick(stack, slot, entity);
 
         if (this.isEnabled(entity, stack)) {
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 20, 0, true, false, false));
-            entity.addStatusEffect(new StatusEffectInstance(ModStatusEffects.IR_VISION, 20, 0, true, false, false));
-        } else {
-            entity.removeStatusEffect(ModStatusEffects.IR_VISION);
+            entity.addStatusEffect(new StatusEffectInstance(ModStatusEffects.ANTIDOTE, 20, 0, true, false, false));
         }
     }
-
 }

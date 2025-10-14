@@ -1,5 +1,8 @@
 package com.whitewhistle.bleedingedge.mixin;
 
+import com.whitewhistle.bleedingedge.effects.ModStatusEffects;
+import com.whitewhistle.bleedingedge.items.AppliedItem;
+import com.whitewhistle.bleedingedge.items.ElectricToggledItem;
 import com.whitewhistle.bleedingedge.items.GlobalItemClick;
 import com.whitewhistle.bleedingedge.items.ToggledItem;
 import net.minecraft.client.item.TooltipContext;
@@ -9,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.text.Text;
 import net.minecraft.util.ClickType;
+import net.minecraft.util.Formatting;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -29,7 +33,7 @@ public class ItemStackMixin {
     }
 
     @Inject(at = @At("RETURN"), method = "getTooltip")
-    private void addHexingTooltip(@Nullable PlayerEntity player, TooltipContext context, CallbackInfoReturnable<List<Text>> cir) {
+    private void addGlobalTooltips(@Nullable PlayerEntity player, TooltipContext context, CallbackInfoReturnable<List<Text>> cir) {
         if (player == null) return;
 
         var stack = (ItemStack)(Object)this;
@@ -38,8 +42,23 @@ public class ItemStackMixin {
 
         // generic append tooltip onto applied items
         if (item instanceof ToggledItem toggledItem) {
-            var enabled = toggledItem.isEnabled(stack);
-            tooltip.add(Text.literal("Toggled: " + enabled));
+            var enabled = toggledItem.isEnabled(player, stack);
+            var statusMsg = enabled ? Text.translatable("tooltip.bleeding-edge.toggled-item.on").styled(s -> s.withColor(Formatting.GREEN)) : Text.translatable("tooltip.bleeding-edge.toggled-item.off").styled(s -> s.withColor(Formatting.GRAY));
+
+            if (item instanceof ElectricToggledItem) {
+                if (player.hasStatusEffect(ModStatusEffects.EMP)) {
+                    statusMsg = Text.translatable("tooltip.bleeding-edge.toggled-item.err").styled(s -> s.withColor(Formatting.RED));
+                }
+
+                tooltip.add(Text.translatable("tooltip.bleeding-edge.toggled-item.description", statusMsg).styled(s -> s.withColor(Formatting.GRAY)));
+                tooltip.add(Text.translatable("tooltip.bleeding-edge.toggled-item.emp.disclaimer").styled(s -> s.withColor(Formatting.GRAY)));
+            } else {
+                tooltip.add(Text.translatable("tooltip.bleeding-edge.toggled-item.description", statusMsg).styled(s -> s.withColor(Formatting.GRAY)));
+            }
+        }
+
+        if (item instanceof AppliedItem appliedItem) {
+            tooltip.add(appliedItem.getTooltip(stack));
         }
     }
 

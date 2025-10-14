@@ -3,10 +3,12 @@
   "package": "com.whitewhistle.bleedingedge.mixin.client",
   "compatibilityLevel": "JAVA_17",
   "client": [
+    "DrawContextMixin",
     "EntityRenderDispatcherMixin",
     "ExampleClientMixin",
     "GameRendererMixin",
-    "HandledScreenAccessor"
+    "HandledScreenAccessor",
+    "ItemRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

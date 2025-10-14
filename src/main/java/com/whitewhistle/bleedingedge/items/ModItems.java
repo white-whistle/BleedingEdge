@@ -1,10 +1,7 @@
 package com.whitewhistle.bleedingedge.items;
 
 import com.whitewhistle.bleedingedge.BleedingEdge;
-import com.whitewhistle.bleedingedge.items.impl.CloakingDeviceItem;
-import com.whitewhistle.bleedingedge.items.impl.HoverPackItem;
-import com.whitewhistle.bleedingedge.items.impl.NightVisionGogglesItem;
-import com.whitewhistle.bleedingedge.items.impl.ShieldGeneratorItem;
+import com.whitewhistle.bleedingedge.items.impl.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -18,14 +15,60 @@ import static com.whitewhistle.bleedingedge.BleedingEdge.MOD_ID;
 public class ModItems {
     public static LinkedList<Item> modItems = new LinkedList<>();
 
+    // tools
+    public static final Item HEATING_SLOT = registerItem("heating_slot", new HeatingSlotItem(new FabricItemSettings().maxCount(1)));
+
     // gadgets
-    public static final Item TACTICORE = registerItem("tacticore", new Item(new FabricItemSettings().maxCount(1)));
     public static final Item CLOAKING_DEVICE = registerItem("cloaking_device", new CloakingDeviceItem(new FabricItemSettings().maxCount(1)));
     public static final Item SHIELD_GENERATOR = registerItem("shield_generator", new ShieldGeneratorItem(new FabricItemSettings().maxCount(1)));
-    public static final Item REMOTE_DETONATOR = registerItem("remote_detonator", new Item(new FabricItemSettings().maxCount(1)));
     public static final Item NIGHT_VISION_GOGGLES = registerItem("night_vision_goggles", new NightVisionGogglesItem(new FabricItemSettings().maxCount(1)));
     public static final Item HOVER_PACK = registerItem("hover_pack", new HoverPackItem(new FabricItemSettings().maxCount(1)));
-    public static final Item HOVER_MINE = registerItem("hover_mine", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item LIQUID_COOLING = registerItem("liquid_cooling", new LiquidCoolingItem(new FabricItemSettings().maxCount(1)));
+    public static final Item STEEL_KIDNEY = registerItem("steel_kidney", new SteelKidneyItem(new FabricItemSettings().maxCount(1)));
+
+
+    // ingredients
+    public static final Item CARBON_INGOT = registerItem("carbon_ingot", new Item(new FabricItemSettings()));
+
+    // weapons
+    public static final Item BREACH_HAMMER = registerItem("breach_hammer", new BreachHammer(ModToolMaterials.CARBON, 2, 16, -3.3f, new FabricItemSettings().maxCount(1)));
+
+    // TODO:
+    // ingredients
+    // drop brains from enemies (on saw kill)
+    public static final Item BRAIN = registerItem("brain", new Item(new FabricItemSettings()));
+    public static final Item QUALITY_BRAIN = registerItem("quality_brain", new Item(new FabricItemSettings()));
+    public static final Item ROTTEN_BRAIN = registerItem("rotten_brain", new Item(new FabricItemSettings()));
+    public static final Item SCIENCE = registerItem("science", new Item(new FabricItemSettings()));
+    public static final Item TECHNOLOGY = registerItem("technology", new Item(new FabricItemSettings())); // craft science with iron and carbon
+
+    // tools
+    // feed sugar to get science
+    public static final Item BRAIN_JAR = registerItem("brain_jar", new SlotItem(new FabricItemSettings().maxCount(1)));
+    public static final Item REPAIR_SLOT = registerItem("repair_slot", new LiquidCoolingItem(new FabricItemSettings().maxCount(1)));
+    public static final Item HELL_PAD = registerItem("hell_pad", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item TACTICAL_TOTEM = registerItem("tactical_totem", new Item(new FabricItemSettings().maxCount(1)));
+
+    // consumable
+    public static final Item STIM = registerItem("stim", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item NUTRIENT_VOXEL = registerItem("nutrient_voxel", new Item(new FabricItemSettings().maxCount(1)));
+
+    // gadgets
+    public static final Item TESLA_PACK = registerItem("tesla_pack", new Item(new FabricItemSettings().maxCount(1))); // zap yourself and nearby entities, zapped entities affected by EMP
+
+    public static final Item MEDICORE = registerItem("medicore", new Item(new FabricItemSettings().maxCount(1))); // + belt slots
+    public static final Item HEAVYCORE = registerItem("heavycore", new Item(new FabricItemSettings().maxCount(1))); // for tanks, + back slots - belt slots
+    public static final Item TACTICORE = registerItem("tacticore", new Item(new FabricItemSettings().maxCount(1))); // + face + legs + belt
+    // grounded? EMP resistance but cannot move
+
+    // weapons
+    public static final Item IRON_SAW = registerItem("iron_saw", new Item(new FabricItemSettings()));
+    public static final Item STORM_BENDER = registerItem("storm_bender", new Item(new FabricItemSettings())); // calls lightning to self, shoots out EMP projectile (like wardens) maybe call it storm rail instead?
+
+    // projectile
+    public static final Item ANTIGRAVITY_MINE = registerItem("antigravity_mine", new Item(new FabricItemSettings().maxCount(1)));
+    // misc
+    public static final Item REMOTE_DETONATOR = registerItem("remote_detonator", new Item(new FabricItemSettings().maxCount(1))); // maybe repurpose to activate bound toggleable items?
 
 
     public static <T extends Item> T registerItem(String name, T item) {
