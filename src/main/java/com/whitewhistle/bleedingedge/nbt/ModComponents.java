@@ -10,6 +10,9 @@ public class ModComponents {
     public static final ItemComponent<ItemStack> PROCESSING_STACK = new ItemComponent<>(ModIdentifier.of("charged"), ModCodecs.ITEMSTACK);
     public static final ItemComponent<Integer> CURRENT_BURN_TICKS = new ItemComponent<>(ModIdentifier.of("current_burn_ticks"), ModCodecs.INT);
     public static final ItemComponent<Integer> TOTAL_BURN_TICKS = new ItemComponent<>(ModIdentifier.of("total_burn_ticks"), ModCodecs.INT);
+    public static final ItemComponent<Integer> CALORIES = new ItemComponent<>(ModIdentifier.of("calories"), ModCodecs.INT);
+    public static final ItemComponent<Integer> BRAIN_POWER = new ItemComponent<>(ModIdentifier.of("brain_power"), ModCodecs.INT);
+    public static final ItemComponent<Integer> EUREKA_POINTS = new ItemComponent<>(ModIdentifier.of("eureka_points"), ModCodecs.INT);
 
     public static void register() {
 

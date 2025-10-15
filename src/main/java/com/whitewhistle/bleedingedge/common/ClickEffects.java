@@ -11,8 +11,14 @@ public abstract class ClickEffects {
         public void showToggleParticles(ItemStack stack, boolean enabled) {
 
         }
+
+        @Override
+        public void showBrainThinkParticles(ItemStack stack, int amount) {
+
+        }
     };
 
     public abstract void showToggleParticles(ItemStack stack, boolean enabled);
+    public abstract void showBrainThinkParticles(ItemStack stack, int amount);
 
 }

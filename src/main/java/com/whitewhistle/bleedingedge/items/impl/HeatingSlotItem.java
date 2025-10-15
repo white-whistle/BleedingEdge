@@ -17,13 +17,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Random;
+
+import static com.whitewhistle.bleedingedge.util.RandomUtil.r0;
 
 public class HeatingSlotItem extends SlotItem {
-    private static final Random r = new Random();
-    private static float r0() {
-        return 0.5f + (r.nextFloat() * 0.5f);
-    }
 
     public HeatingSlotItem(Settings settings) {
         super(settings);

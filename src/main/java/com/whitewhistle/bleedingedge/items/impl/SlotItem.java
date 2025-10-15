@@ -5,7 +5,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.StackReference;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.screen.slot.Slot;
 
 public class SlotItem extends Item {
     public SlotItem(Settings settings) {
@@ -14,6 +13,14 @@ public class SlotItem extends Item {
 
     public boolean isItemApplicable(PlayerEntity player, ItemStack stack, ItemStack cursorStack) {
         return true;
+    }
+
+    public boolean isItemApplicableCatalyst(PlayerEntity player, ItemStack stack, ItemStack cursorStack) {
+        return false;
+    }
+
+    public void onItemApplyCatalyst(PlayerEntity player, ItemStack stack, ItemStack cursorStack, StackReference cursorStackReference) {
+
     }
 
     public void onItemApplySuccess(PlayerEntity player, ItemStack stack, ItemStack cursorStack) {
@@ -50,6 +57,11 @@ public class SlotItem extends Item {
             this.onEmptied(player, stack);
 
         } else {
+            if (this.isItemApplicableCatalyst(player, stack, cursorStack)) {
+                this.onItemApplyCatalyst(player, stack, cursorStack, cursorStackReference);
+
+                return true;
+            }
             if (!this.isItemApplicable(player, stack, cursorStack)) {
                 this.onItemApplyFail(player, stack, cursorStack);
 

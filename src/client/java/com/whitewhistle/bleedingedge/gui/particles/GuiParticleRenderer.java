@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import org.joml.Vector2f;
 import org.joml.Vector2i;
 
+import java.util.List;
 import java.util.Random;
 
 public class GuiParticleRenderer implements ScreenEvents.AfterRender, ScreenEvents.AfterTick {
@@ -43,7 +44,7 @@ public class GuiParticleRenderer implements ScreenEvents.AfterRender, ScreenEven
         var matrix = drawContext.getMatrices();
         matrix.push();
         matrix.translate(0, 0, 999);
-        particleSystem.particles.forEach(p -> p.render(screen, drawContext, mouseX, mouseY, tickDelta));
+        List.copyOf(particleSystem.particles).forEach(p -> p.render(screen, drawContext, mouseX, mouseY, tickDelta));
         matrix.pop();
     }
 
@@ -64,13 +65,17 @@ public class GuiParticleRenderer implements ScreenEvents.AfterRender, ScreenEven
 
     public static Vector2f getStackPosition(ItemStack stack) {
         var currentScreen = MinecraftClient.getInstance().currentScreen;
-        if (!(currentScreen instanceof HandledScreen<?> handledScreen)) return new Vector2f();
+        if (!(currentScreen instanceof HandledScreen<?> handledScreen)) {
+            return new Vector2f();
+        }
 
         var handler = handledScreen.getScreenHandler();
         var foundSlot = handler.slots.stream().filter(s -> s.getStack() == stack).findFirst();
 
         var slot = foundSlot.orElse(null);
-        if (slot == null) return new Vector2f();
+        if (slot == null) {
+            return new Vector2f();
+        }
 
         var hAccessor = ((HandledScreenAccessor) handledScreen);
 

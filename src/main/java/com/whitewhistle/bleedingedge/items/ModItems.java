@@ -17,6 +17,7 @@ public class ModItems {
 
     // tools
     public static final Item HEATING_SLOT = registerItem("heating_slot", new HeatingSlotItem(new FabricItemSettings().maxCount(1)));
+    public static final Item BRAIN_JAR = registerItem("brain_jar", new BrainJarItem(new FabricItemSettings().maxCount(1)));
 
     // gadgets
     public static final Item CLOAKING_DEVICE = registerItem("cloaking_device", new CloakingDeviceItem(new FabricItemSettings().maxCount(1)));
@@ -29,6 +30,11 @@ public class ModItems {
 
     // ingredients
     public static final Item CARBON_INGOT = registerItem("carbon_ingot", new Item(new FabricItemSettings()));
+    public static final Item SMALL_BRAIN = registerItem("small_brain", new BrainItem(new FabricItemSettings(),1));
+    public static final Item ROTTEN_BRAIN = registerItem("rotten_brain", new BrainItem(new FabricItemSettings(),3));
+    public static final BrainItem BRAIN = registerItem("brain", new BrainItem(new FabricItemSettings(), 10));
+    public static final Item STEEL_BRAIN = registerItem("steel_brain", new BrainItem(new FabricItemSettings(), 25));
+    public static final Item EUREKA = registerItem("eureka", new Item(new FabricItemSettings()));
 
     // weapons
     public static final Item BREACH_HAMMER = registerItem("breach_hammer", new BreachHammer(ModToolMaterials.CARBON, 2, 16, -3.3f, new FabricItemSettings().maxCount(1)));
@@ -36,22 +42,17 @@ public class ModItems {
     // TODO:
     // ingredients
     // drop brains from enemies (on saw kill)
-    public static final Item BRAIN = registerItem("brain", new Item(new FabricItemSettings()));
-    public static final Item QUALITY_BRAIN = registerItem("quality_brain", new Item(new FabricItemSettings()));
-    public static final Item ROTTEN_BRAIN = registerItem("rotten_brain", new Item(new FabricItemSettings()));
-    public static final Item SCIENCE = registerItem("science", new Item(new FabricItemSettings()));
     public static final Item TECHNOLOGY = registerItem("technology", new Item(new FabricItemSettings())); // craft science with iron and carbon
 
     // tools
     // feed sugar to get science
-    public static final Item BRAIN_JAR = registerItem("brain_jar", new SlotItem(new FabricItemSettings().maxCount(1)));
     public static final Item REPAIR_SLOT = registerItem("repair_slot", new LiquidCoolingItem(new FabricItemSettings().maxCount(1)));
     public static final Item HELL_PAD = registerItem("hell_pad", new Item(new FabricItemSettings().maxCount(1)));
     public static final Item TACTICAL_TOTEM = registerItem("tactical_totem", new Item(new FabricItemSettings().maxCount(1)));
 
     // consumable
     public static final Item STIM = registerItem("stim", new Item(new FabricItemSettings().maxCount(1)));
-    public static final Item NUTRIENT_VOXEL = registerItem("nutrient_voxel", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item NUTRIENT_BLOCK = registerItem("nutrient_block", new Item(new FabricItemSettings().maxCount(1)));
 
     // gadgets
     public static final Item TESLA_PACK = registerItem("tesla_pack", new Item(new FabricItemSettings().maxCount(1))); // zap yourself and nearby entities, zapped entities affected by EMP
@@ -62,13 +63,13 @@ public class ModItems {
     // grounded? EMP resistance but cannot move
 
     // weapons
-    public static final Item IRON_SAW = registerItem("iron_saw", new Item(new FabricItemSettings()));
-    public static final Item STORM_BENDER = registerItem("storm_bender", new Item(new FabricItemSettings())); // calls lightning to self, shoots out EMP projectile (like wardens) maybe call it storm rail instead?
+    public static final Item IRON_SAW = registerItem("iron_saw", new Item(new FabricItemSettings())); // brain extraction device, harms entities without helmets, damage is blocked by helmets but damages durability faster
+    public static final Item STORM_BENDER = registerItem("storm_bender", new Item(new FabricItemSettings())); // calls lightning to self, shoots out EMP projectile (like wardens) maybe call it storm rail instead? looks likea bow so storm bender is more fitting
 
     // projectile
     public static final Item ANTIGRAVITY_MINE = registerItem("antigravity_mine", new Item(new FabricItemSettings().maxCount(1)));
     // misc
-    public static final Item REMOTE_DETONATOR = registerItem("remote_detonator", new Item(new FabricItemSettings().maxCount(1))); // maybe repurpose to activate bound toggleable items?
+    public static final Item REMOTE_DETONATOR = registerItem("remote_detonator", new Item(new FabricItemSettings().maxCount(1))); // maybe repurpose to activate bound toggleable items? i think we will just use hotkeys so maybe we scrap this
 
 
     public static <T extends Item> T registerItem(String name, T item) {
