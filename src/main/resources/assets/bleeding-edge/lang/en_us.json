@@ -19,6 +19,8 @@
   "effect.bleeding-edge.emp": "EMP",
   "effect.bleeding-edge.antidote": "Antidote",
   "attribute.bleeding-edge.generic.shield": "Shielding",
+  "category.bleeding-edge.gadget_key_binding": "Bleeding Edge Gadgets",
+  "key.bleeding-edge.activate_obsidian_sash": "Activate Obsidian Sash",
   "tooltip.bleeding-edge.breach_hammer.description.charge": "Charge to prime your next hit",
   "tooltip.bleeding-edge.breach_hammer.description.charged": "Charged. handle with care",
   "tooltip.bleeding-edge.heating_slot.description1": "Items placed into this slot will be smelted",

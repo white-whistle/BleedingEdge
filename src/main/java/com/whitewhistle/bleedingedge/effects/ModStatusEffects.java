@@ -1,6 +1,7 @@
 package com.whitewhistle.bleedingedge.effects;
 
 import com.whitewhistle.bleedingedge.entity.ModEntityAttributes;
+import com.whitewhistle.bleedingedge.items.impl.ObsidianSashItem;
 import com.whitewhistle.bleedingedge.util.UuidUtil;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
@@ -23,9 +24,20 @@ public class ModStatusEffects {
     public static final StatusEffect IR_VISION = registerStatusEffect("ir_vision", new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0x000000));
     public static final StatusEffect EMP = registerStatusEffect("emp", new ModStatusEffect(StatusEffectCategory.HARMFUL, 0x000000));
     public static final StatusEffect ANTIDOTE = registerStatusEffect("antidote", new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0x000000));
+    public static final StatusEffect QUANTUM_TUNNELING = registerStatusEffect("quantum_tunneling", new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0x000000) {
+        @Override
+        public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
+            super.onRemoved(entity, attributes, amplifier);
+
+            if (entity.hasStatusEffect(CANCEL_QUANTUM_TUNNELING)) return;
+
+            ObsidianSashItem.shiftEntityDimension(entity);
+        }
+    });
 
     // cooldown
     public static final StatusEffect SHIELD_COOLDOWN = registerStatusEffect("shield_cooldown", new ModStatusEffect(StatusEffectCategory.NEUTRAL, 0x000000));
+    public static final StatusEffect CANCEL_QUANTUM_TUNNELING = registerStatusEffect("cancel_quantum_tunneling", new ModStatusEffect(StatusEffectCategory.NEUTRAL, 0x000000));
 
     // ============= impl ==================
 

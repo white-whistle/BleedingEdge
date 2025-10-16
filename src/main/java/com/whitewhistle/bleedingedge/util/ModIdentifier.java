@@ -8,4 +8,10 @@ public class ModIdentifier {
     public static Identifier of(String name) {
         return new Identifier(MOD_ID, name);
     }
+
+    public static String string(String name) {
+        return new Identifier(MOD_ID, name).toString();
+    }
+
+    public static Identifier EMPTY = of("empty");
 }

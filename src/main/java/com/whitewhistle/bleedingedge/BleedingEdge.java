@@ -5,6 +5,7 @@ import com.whitewhistle.bleedingedge.items.ModFuelItems;
 import com.whitewhistle.bleedingedge.items.ModItemGroups;
 import com.whitewhistle.bleedingedge.items.ModItems;
 import com.whitewhistle.bleedingedge.nbt.ModComponents;
+import com.whitewhistle.bleedingedge.network.ModServerPacketHandler;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -25,6 +26,7 @@ public class BleedingEdge implements ModInitializer {
         ModStatusEffects.registerEffects();
         ModItemGroups.registerGroups();
         ModFuelItems.init();
+        ModServerPacketHandler.init();
 
         LOGGER.info("++ they wont see you coming ++");
     }

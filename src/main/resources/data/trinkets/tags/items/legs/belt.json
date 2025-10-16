@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "bleeding-edge:liquid_cooling",
-    "bleeding-edge:steel_kidney"
+    "bleeding-edge:steel_kidney",
+    "bleeding-edge:obsidian_sash"
   ]
 }

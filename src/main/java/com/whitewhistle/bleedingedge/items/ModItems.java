@@ -26,7 +26,7 @@ public class ModItems {
     public static final Item HOVER_PACK = registerItem("hover_pack", new HoverPackItem(new FabricItemSettings().maxCount(1)));
     public static final Item LIQUID_COOLING = registerItem("liquid_cooling", new LiquidCoolingItem(new FabricItemSettings().maxCount(1)));
     public static final Item STEEL_KIDNEY = registerItem("steel_kidney", new SteelKidneyItem(new FabricItemSettings().maxCount(1)));
-
+    public static final Item OBSIDIAN_SASH = registerItem("obsidian_sash", new ObsidianSashItem(new FabricItemSettings().maxCount(1)));
 
     // ingredients
     public static final Item CARBON_INGOT = registerItem("carbon_ingot", new Item(new FabricItemSettings()));
@@ -35,19 +35,18 @@ public class ModItems {
     public static final BrainItem BRAIN = registerItem("brain", new BrainItem(new FabricItemSettings(), 10));
     public static final Item STEEL_BRAIN = registerItem("steel_brain", new BrainItem(new FabricItemSettings(), 25));
     public static final Item EUREKA = registerItem("eureka", new Item(new FabricItemSettings()));
+    public static final Item TECHNOLOGY = registerItem("technology", new Item(new FabricItemSettings())); // craft science with iron and carbon
 
     // weapons
     public static final Item BREACH_HAMMER = registerItem("breach_hammer", new BreachHammer(ModToolMaterials.CARBON, 2, 16, -3.3f, new FabricItemSettings().maxCount(1)));
 
     // TODO:
     // ingredients
-    // drop brains from enemies (on saw kill)
-    public static final Item TECHNOLOGY = registerItem("technology", new Item(new FabricItemSettings())); // craft science with iron and carbon
 
     // tools
     // feed sugar to get science
-    public static final Item REPAIR_SLOT = registerItem("repair_slot", new LiquidCoolingItem(new FabricItemSettings().maxCount(1)));
-    public static final Item HELL_PAD = registerItem("hell_pad", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item REPAIR_SLOT = registerItem("repair_slot", new SlotItem(new FabricItemSettings().maxCount(1)));
+    public static final Item ASSEMBLY_SLOT = registerItem("assembly_slot", new SlotItem(new FabricItemSettings().maxCount(1)));
     public static final Item TACTICAL_TOTEM = registerItem("tactical_totem", new Item(new FabricItemSettings().maxCount(1)));
 
     // consumable

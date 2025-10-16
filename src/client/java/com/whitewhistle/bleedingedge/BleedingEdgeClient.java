@@ -12,5 +12,6 @@ public class BleedingEdgeClient implements ClientModInitializer {
 		ClientClickEffects.register();
 		ModShaders.register();
 		ModModelPredicateProvider.registerPredicates();
+		ModKeyBindings.init();
 	}
 }
