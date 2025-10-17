@@ -1,6 +1,6 @@
 package com.whitewhistle.bleedingedge.items.impl;
 
-import com.whitewhistle.bleedingedge.common.ClickEffects;
+import com.whitewhistle.bleedingedge.common.CommonBridge;
 import com.whitewhistle.bleedingedge.items.ModItems;
 import com.whitewhistle.bleedingedge.nbt.ModComponents;
 import com.whitewhistle.bleedingedge.util.TweenUtil;
@@ -69,7 +69,7 @@ public class BrainJarItem extends SlotItem{
         ModComponents.CALORIES.set(stack, calories);
 
         if (player.getWorld().isClient) {
-            ClickEffects.INSTANCE.showBrainThinkParticles(stack, 1);
+            CommonBridge.INSTANCE.showBrainThinkParticles(stack, 1);
         }
 
     }

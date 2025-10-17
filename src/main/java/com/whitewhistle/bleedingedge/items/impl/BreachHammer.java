@@ -2,10 +2,14 @@ package com.whitewhistle.bleedingedge.items.impl;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import com.whitewhistle.bleedingedge.entity.ModEntityAttributes;
 import com.whitewhistle.bleedingedge.items.IHasModel;
 import com.whitewhistle.bleedingedge.nbt.ModComponents;
+import com.whitewhistle.bleedingedge.util.UuidUtil;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.data.client.Model;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
@@ -16,6 +20,8 @@ import net.minecraft.item.CrossbowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -26,13 +32,19 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.UUID;
 
 public class BreachHammer extends PickaxeItem implements IHasModel {
 
+    private static final UUID CHARGED_BREACH_HAMMER_THREAT_MODIFIER = UuidUtil.from("charged_breach_hammer_modifier");
+    private static final int CHARGED_THREAT = ModTrinketItem.MAJOR_THREAT;
     private final float chargedAttackDamage;
     private final Multimap<EntityAttribute, EntityAttributeModifier> chargedAttributeModifiers;
 
-    public BreachHammer(ToolMaterial material, int attackDamage, int chargedAttackDamage, float attackSpeed, Settings settings) {
+    private boolean charged = false;
+    private boolean loaded = false;
+
+    public BreachHammer(ToolMaterial material, int attackDamage, float chargedAttackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
 
         this.chargedAttackDamage = chargedAttackDamage + material.getAttackDamage();
@@ -45,6 +57,7 @@ public class BreachHammer extends PickaxeItem implements IHasModel {
                 EntityAttributes.GENERIC_ATTACK_SPEED,
                 new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Charged Tool modifier", (double) attackSpeed, EntityAttributeModifier.Operation.ADDITION)
         );
+        builder.put(ModEntityAttributes.THREAT, new EntityAttributeModifier(CHARGED_BREACH_HAMMER_THREAT_MODIFIER, "Charged Tool modifier", CHARGED_THREAT, EntityAttributeModifier.Operation.ADDITION));
         this.chargedAttributeModifiers = builder.build();
     }
 
@@ -68,6 +81,43 @@ public class BreachHammer extends PickaxeItem implements IHasModel {
         }
 
         return super.postHit(stack, target, attacker);
+    }
+
+    private SoundEvent getQuickChargeSound(int stage) {
+        switch (stage) {
+            case 1:
+                return SoundEvents.ITEM_CROSSBOW_QUICK_CHARGE_1;
+            case 2:
+                return SoundEvents.ITEM_CROSSBOW_QUICK_CHARGE_2;
+            case 3:
+                return SoundEvents.ITEM_CROSSBOW_QUICK_CHARGE_3;
+            default:
+                return SoundEvents.ITEM_CROSSBOW_LOADING_START;
+        }
+    }
+
+    @Override
+    public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
+        if (!world.isClient) {
+            int i = EnchantmentHelper.getLevel(Enchantments.QUICK_CHARGE, stack);
+            SoundEvent soundEvent = this.getQuickChargeSound(i);
+            SoundEvent soundEvent2 = i == 0 ? SoundEvents.ITEM_CROSSBOW_LOADING_MIDDLE : null;
+            float f = (float)(stack.getMaxUseTime() - remainingUseTicks) / CrossbowItem.getPullTime(stack);
+            if (f < 0.2F) {
+                this.charged = false;
+                this.loaded = false;
+            }
+
+            if (f >= 0.2F && !this.charged) {
+                this.charged = true;
+                world.playSound(null, user.getX(), user.getY(), user.getZ(), soundEvent, SoundCategory.PLAYERS, 0.5F, 1.0F);
+            }
+
+            if (f >= 0.5F && soundEvent2 != null && !this.loaded) {
+                this.loaded = true;
+                world.playSound(null, user.getX(), user.getY(), user.getZ(), soundEvent2, SoundCategory.PLAYERS, 0.5F, 1.0F);
+            }
+        }
     }
 
     public float getChargedAttackDamage() {

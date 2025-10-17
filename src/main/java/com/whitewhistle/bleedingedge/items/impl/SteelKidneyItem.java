@@ -3,13 +3,11 @@ package com.whitewhistle.bleedingedge.items.impl;
 import com.whitewhistle.bleedingedge.effects.ModStatusEffects;
 import com.whitewhistle.bleedingedge.items.ElectricToggledItem;
 import dev.emi.trinkets.api.SlotReference;
-import dev.emi.trinkets.api.TrinketItem;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
 
-public class SteelKidneyItem extends TrinketItem implements ElectricToggledItem {
+public class SteelKidneyItem extends ModTrinketItem implements ElectricToggledItem.WithAbilities {
     public SteelKidneyItem(Settings settings) {
         super(settings);
     }

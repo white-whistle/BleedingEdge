@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "bleeding-edge:night_vision_goggles"
+    "bleeding-edge:night_vision_goggles",
+    "bleeding-edge:threat_visor"
   ]
 }

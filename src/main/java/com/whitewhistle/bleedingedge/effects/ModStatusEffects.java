@@ -22,6 +22,7 @@ import static com.whitewhistle.bleedingedge.BleedingEdge.MOD_ID;
 public class ModStatusEffects {
     public static final StatusEffect CLOAKED = registerStatusEffect("cloaked", new AttributeStatusEffect(UuidUtil.from("cloaked"),StatusEffectCategory.BENEFICIAL, 0x000000, ModEntityAttributes.CLOAKING, i -> i+1));
     public static final StatusEffect IR_VISION = registerStatusEffect("ir_vision", new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0x000000));
+    public static final StatusEffect THREAT_VISION = registerStatusEffect("threat_vision", new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0x000000));
     public static final StatusEffect EMP = registerStatusEffect("emp", new ModStatusEffect(StatusEffectCategory.HARMFUL, 0x000000));
     public static final StatusEffect ANTIDOTE = registerStatusEffect("antidote", new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0x000000));
     public static final StatusEffect QUANTUM_TUNNELING = registerStatusEffect("quantum_tunneling", new ModStatusEffect(StatusEffectCategory.BENEFICIAL, 0x000000) {

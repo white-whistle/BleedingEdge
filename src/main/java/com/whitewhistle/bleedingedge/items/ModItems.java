@@ -15,6 +15,9 @@ import static com.whitewhistle.bleedingedge.BleedingEdge.MOD_ID;
 public class ModItems {
     public static LinkedList<Item> modItems = new LinkedList<>();
 
+    // creative
+    public static final Item SUPPLY_DROP = registerItem("supply_drop", new SupplyDropItem(new FabricItemSettings().maxCount(1)));
+
     // tools
     public static final Item HEATING_SLOT = registerItem("heating_slot", new HeatingSlotItem(new FabricItemSettings().maxCount(1)));
     public static final Item BRAIN_JAR = registerItem("brain_jar", new BrainJarItem(new FabricItemSettings().maxCount(1)));
@@ -23,6 +26,7 @@ public class ModItems {
     public static final Item CLOAKING_DEVICE = registerItem("cloaking_device", new CloakingDeviceItem(new FabricItemSettings().maxCount(1)));
     public static final Item SHIELD_GENERATOR = registerItem("shield_generator", new ShieldGeneratorItem(new FabricItemSettings().maxCount(1)));
     public static final Item NIGHT_VISION_GOGGLES = registerItem("night_vision_goggles", new NightVisionGogglesItem(new FabricItemSettings().maxCount(1)));
+    public static final Item THREAT_VISOR = registerItem("threat_visor", new ThreatVisorItem(new FabricItemSettings().maxCount(1)));
     public static final Item HOVER_PACK = registerItem("hover_pack", new HoverPackItem(new FabricItemSettings().maxCount(1)));
     public static final Item LIQUID_COOLING = registerItem("liquid_cooling", new LiquidCoolingItem(new FabricItemSettings().maxCount(1)));
     public static final Item STEEL_KIDNEY = registerItem("steel_kidney", new SteelKidneyItem(new FabricItemSettings().maxCount(1)));
@@ -38,7 +42,7 @@ public class ModItems {
     public static final Item TECHNOLOGY = registerItem("technology", new Item(new FabricItemSettings())); // craft science with iron and carbon
 
     // weapons
-    public static final Item BREACH_HAMMER = registerItem("breach_hammer", new BreachHammer(ModToolMaterials.CARBON, 2, 16, -3.3f, new FabricItemSettings().maxCount(1)));
+    public static final Item BREACH_HAMMER = registerItem("breach_hammer", new BreachHammer(ModToolMaterials.CARBON, 2, 26.5f, -3.3f, new FabricItemSettings().maxCount(1)));
 
     // TODO:
     // ingredients
@@ -47,14 +51,14 @@ public class ModItems {
     // feed sugar to get science
     public static final Item REPAIR_SLOT = registerItem("repair_slot", new SlotItem(new FabricItemSettings().maxCount(1)));
     public static final Item ASSEMBLY_SLOT = registerItem("assembly_slot", new SlotItem(new FabricItemSettings().maxCount(1)));
-    public static final Item TACTICAL_TOTEM = registerItem("tactical_totem", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item KEVLAR_TOTEM = registerItem("kevlar_totem", new Item(new FabricItemSettings().maxCount(1)));
 
     // consumable
     public static final Item STIM = registerItem("stim", new Item(new FabricItemSettings().maxCount(1)));
     public static final Item NUTRIENT_BLOCK = registerItem("nutrient_block", new Item(new FabricItemSettings().maxCount(1)));
 
     // gadgets
-    public static final Item TESLA_PACK = registerItem("tesla_pack", new Item(new FabricItemSettings().maxCount(1))); // zap yourself and nearby entities, zapped entities affected by EMP
+    public static final Item TESLA_PACK = registerItem("tesla_pack", new HoverPackItem(new FabricItemSettings().maxCount(1))); // zap yourself and nearby entities, zapped entities affected by EMP
 
     public static final Item MEDICORE = registerItem("medicore", new Item(new FabricItemSettings().maxCount(1))); // + belt slots
     public static final Item HEAVYCORE = registerItem("heavycore", new Item(new FabricItemSettings().maxCount(1))); // for tanks, + back slots - belt slots

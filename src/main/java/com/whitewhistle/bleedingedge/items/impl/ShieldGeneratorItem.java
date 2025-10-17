@@ -5,7 +5,6 @@ import com.whitewhistle.bleedingedge.effects.ModStatusEffects;
 import com.whitewhistle.bleedingedge.entity.ModEntityAttributes;
 import com.whitewhistle.bleedingedge.items.ElectricToggledItem;
 import dev.emi.trinkets.api.SlotReference;
-import dev.emi.trinkets.api.TrinketItem;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
@@ -13,7 +12,7 @@ import net.minecraft.item.ItemStack;
 
 import java.util.UUID;
 
-public class ShieldGeneratorItem extends TrinketItem implements ElectricToggledItem {
+public class ShieldGeneratorItem extends ModTrinketItem implements ElectricToggledItem.WithAbilities {
 
     public ShieldGeneratorItem(Settings settings) {
         super(settings);

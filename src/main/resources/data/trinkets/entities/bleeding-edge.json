@@ -1,6 +1,17 @@
 {
   "entities": [
-    "player"
+    "player",
+    "zombie",
+    "creeper",
+    "skeleton",
+    "pillager",
+    "phantom",
+    "wither_skeleton",
+    "piglin",
+    "wither",
+    "blaze",
+    "husk",
+    "ender_dragon"
   ],
   "slots": [
     "head/face",

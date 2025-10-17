@@ -4,14 +4,18 @@ import com.whitewhistle.bleedingedge.effects.ModStatusEffects;
 import com.whitewhistle.bleedingedge.items.ElectricToggledItem;
 import com.whitewhistle.bleedingedge.nbt.ModComponents;
 import dev.emi.trinkets.api.SlotReference;
-import dev.emi.trinkets.api.TrinketItem;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.ItemStack;
 
-public class CloakingDeviceItem extends TrinketItem implements ElectricToggledItem {
+public class CloakingDeviceItem extends ModTrinketItem implements ElectricToggledItem.WithAbilities {
     public CloakingDeviceItem(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    public int getThreatLevel() {
+        return ModTrinketItem.MAJOR_THREAT;
     }
 
     @Override

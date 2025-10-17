@@ -3,15 +3,19 @@ package com.whitewhistle.bleedingedge.items.impl;
 import com.whitewhistle.bleedingedge.effects.ModStatusEffects;
 import com.whitewhistle.bleedingedge.items.ElectricToggledItem;
 import dev.emi.trinkets.api.SlotReference;
-import dev.emi.trinkets.api.TrinketItem;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
 
-public class NightVisionGogglesItem extends TrinketItem implements ElectricToggledItem {
+public class NightVisionGogglesItem extends ModTrinketItem implements ElectricToggledItem.WithAbilities {
     public NightVisionGogglesItem(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    public int getThreatLevel() {
+        return ModTrinketItem.MODERATE_THREAT;
     }
 
     @Override

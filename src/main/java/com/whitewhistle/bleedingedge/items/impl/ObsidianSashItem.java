@@ -1,11 +1,11 @@
 package com.whitewhistle.bleedingedge.items.impl;
 
 import com.google.common.collect.Multimap;
+import com.whitewhistle.bleedingedge.ability.Ability;
+import com.whitewhistle.bleedingedge.ability.IHasAbilities;
 import com.whitewhistle.bleedingedge.effects.ModStatusEffects;
-import com.whitewhistle.bleedingedge.items.IHasHotkeys;
 import com.whitewhistle.bleedingedge.util.ModIdentifier;
 import dev.emi.trinkets.api.SlotReference;
-import dev.emi.trinkets.api.TrinketItem;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
@@ -17,21 +17,46 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.border.WorldBorder;
 import net.minecraft.world.dimension.DimensionType;
 
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
 import static com.whitewhistle.bleedingedge.util.RandomUtil.r0;
 
-public class ObsidianSashItem extends TrinketItem implements IHasHotkeys {
+public class ObsidianSashItem extends ModTrinketItem implements IHasAbilities {
+
+    public static final Ability ACTIVATE = new Ability(ModIdentifier.of("activate")) {
+        @Override
+        public void trigger(PlayerEntity player, ItemStack stack) {
+            super.trigger(player, stack);
+
+            if (player.hasStatusEffect(ModStatusEffects.EMP)) return;
+
+            if (player.hasStatusEffect(ModStatusEffects.QUANTUM_TUNNELING)) {
+                player.addStatusEffect(new StatusEffectInstance(ModStatusEffects.CANCEL_QUANTUM_TUNNELING, 1));
+                player.removeStatusEffect(ModStatusEffects.QUANTUM_TUNNELING);
+                player.removeStatusEffect(ModStatusEffects.CANCEL_QUANTUM_TUNNELING);
+            } else {
+                player.addStatusEffect(new StatusEffectInstance(ModStatusEffects.QUANTUM_TUNNELING, 20 * 3));
+            }
+        }
+    };
+    public static final List<Ability> ABILITIES = List.of(
+            ACTIVATE
+    );
 
     public ObsidianSashItem(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    public int getThreatLevel() {
+        return ModTrinketItem.MODERATE_THREAT;
     }
 
     @Override
@@ -44,16 +69,8 @@ public class ObsidianSashItem extends TrinketItem implements IHasHotkeys {
     }
 
     @Override
-    public void handleHotkey(Identifier packetId, PlayerEntity player, ItemStack stack) {
-        if (player.hasStatusEffect(ModStatusEffects.EMP)) return;
-
-        if (player.hasStatusEffect(ModStatusEffects.QUANTUM_TUNNELING)) {
-            player.addStatusEffect(new StatusEffectInstance(ModStatusEffects.CANCEL_QUANTUM_TUNNELING, 1));
-            player.removeStatusEffect(ModStatusEffects.QUANTUM_TUNNELING);
-            player.removeStatusEffect(ModStatusEffects.CANCEL_QUANTUM_TUNNELING);
-        } else {
-            player.addStatusEffect(new StatusEffectInstance(ModStatusEffects.QUANTUM_TUNNELING, 20 * 3));
-        }
+    public List<Ability> getAbilities() {
+        return ABILITIES;
     }
 
     private static RegistryKey<World> getNextDimension(World world) {

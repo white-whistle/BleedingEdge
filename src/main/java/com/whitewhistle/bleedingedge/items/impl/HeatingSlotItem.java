@@ -144,6 +144,6 @@ public class HeatingSlotItem extends SlotItem {
 
     @Override
     public ItemStack getRecipeRemainder(ItemStack stack) {
-        return new ItemStack(this);
+        return stack.copy();
     }
 }

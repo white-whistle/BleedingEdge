@@ -1,5 +1,7 @@
 package com.whitewhistle.bleedingedge.mixin;
 
+import com.whitewhistle.bleedingedge.ability.IHasAbilities;
+import com.whitewhistle.bleedingedge.common.CommonBridge;
 import com.whitewhistle.bleedingedge.effects.ModStatusEffects;
 import com.whitewhistle.bleedingedge.items.AppliedItem;
 import com.whitewhistle.bleedingedge.items.ElectricToggledItem;
@@ -45,6 +47,8 @@ public class ItemStackMixin {
             var enabled = toggledItem.isEnabled(player, stack);
             var statusMsg = enabled ? Text.translatable("tooltip.bleeding-edge.toggled-item.on").styled(s -> s.withColor(Formatting.GREEN)) : Text.translatable("tooltip.bleeding-edge.toggled-item.off").styled(s -> s.withColor(Formatting.GRAY));
 
+            tooltip.add(Text.empty());
+
             if (item instanceof ElectricToggledItem) {
                 if (player.hasStatusEffect(ModStatusEffects.EMP)) {
                     statusMsg = Text.translatable("tooltip.bleeding-edge.toggled-item.err").styled(s -> s.withColor(Formatting.RED));
@@ -57,7 +61,13 @@ public class ItemStackMixin {
             }
         }
 
+        if (item instanceof IHasAbilities) {
+            tooltip.add(Text.empty());
+            CommonBridge.INSTANCE.addHotkeyTooltip(stack, tooltip);
+        }
+
         if (item instanceof AppliedItem appliedItem) {
+            tooltip.add(Text.empty());
             tooltip.add(appliedItem.getTooltip(stack));
         }
     }
