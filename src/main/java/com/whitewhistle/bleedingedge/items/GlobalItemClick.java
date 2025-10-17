@@ -35,12 +35,16 @@ public class GlobalItemClick {
 
             if (cursorStack.isEmpty() && item instanceof ToggledItem toggledItem) {
                 var enabled = toggledItem.toggle(stack);
-                if (enabled) {
-                    player.playSound(SoundEvents.BLOCK_END_PORTAL_FRAME_FILL, 0.5f + r.nextFloat(), 0.5f + r.nextFloat());
-                } else {
-                    player.playSound(SoundEvents.BLOCK_FIRE_EXTINGUISH, 0.5f + r.nextFloat(), 0.5f + r.nextFloat());
-                }
+
+                toggledItem.playToggleSound(player, enabled);
+
                 return Optional.of(true);
+            }
+
+            if (cursorItem instanceof SlotItem slotItem) {
+                if (slotItem.swapContentsWithSlot(player, slot, stack , cursorStackReference)) {
+                    return Optional.of (true);
+                }
             }
 
             if (item instanceof SlotItem slotItem) {

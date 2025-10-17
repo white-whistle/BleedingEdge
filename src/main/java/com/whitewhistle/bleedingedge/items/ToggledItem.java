@@ -7,6 +7,9 @@ import com.whitewhistle.bleedingedge.util.ModIdentifier;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundEvents;
+
+import static com.whitewhistle.bleedingedge.util.RandomUtil.r0;
 
 public interface ToggledItem {
 
@@ -16,7 +19,9 @@ public interface ToggledItem {
             super.trigger(player, stack);
 
             if (stack.getItem() instanceof ToggledItem toggledItem) {
-                toggledItem.toggle(stack);
+                var enabled = toggledItem.toggle(stack);
+
+                toggledItem.playToggleSound(player, enabled);
             }
         }
     };
@@ -27,6 +32,14 @@ public interface ToggledItem {
         CommonBridge.INSTANCE.showToggleParticles(itemStack, enabled);
 
         return enabled;
+    }
+
+    default void playToggleSound(PlayerEntity player, boolean enabled) {
+        if (enabled) {
+            player.playSound(SoundEvents.BLOCK_END_PORTAL_FRAME_FILL, r0(), r0());
+        } else {
+            player.playSound(SoundEvents.BLOCK_FIRE_EXTINGUISH, r0(), r0());
+        }
     }
 
     default boolean isEnabled(LivingEntity livingEntity, ItemStack stack) {

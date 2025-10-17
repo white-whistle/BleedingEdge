@@ -39,7 +39,11 @@ public class TrinketItemModelRenderer implements TrinketRenderer {
                     TrinketRenderer.translateToChest(matrices, playerModel, player);
                     matrices.translate(0, 0.3f, 0);
                     matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
-
+                }
+                case "necklace" -> {
+                    TrinketRenderer.translateToChest(matrices, playerModel, player);
+                    matrices.translate(0, -0.1f, 0);
+                    matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
                 }
             }
 
@@ -68,7 +72,12 @@ public class TrinketItemModelRenderer implements TrinketRenderer {
 
                     matrices.translate(0, 0.3f, 0);
                     matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
+                }
+                case "necklace" -> {
+                    translateToBipedChest(matrices, bipedEntityModel);
 
+                    matrices.translate(0, -0.1f, 0);
+                    matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
                 }
             }
 

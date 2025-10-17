@@ -3,6 +3,7 @@ package com.whitewhistle.bleedingedge.mixin;
 import com.whitewhistle.bleedingedge.effects.ModStatusEffects;
 import com.whitewhistle.bleedingedge.entity.ModEntityAttributes;
 import com.whitewhistle.bleedingedge.items.ModItems;
+import com.whitewhistle.bleedingedge.items.impl.KevlarTotemItem;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.damage.DamageSource;
@@ -36,6 +37,15 @@ public class LivingEntityMixin {
                     player.getItemCooldownManager().set(ModItems.SHIELD_GENERATOR, duration);
                 }
             }
+        }
+    }
+
+    @Inject(method = "tryUseTotem", at = @At("HEAD"), cancellable = true)
+    private void tryUseTotem(DamageSource source, CallbackInfoReturnable<Boolean> cir) {
+        var entity = (LivingEntity)(Object) this;
+
+        if (KevlarTotemItem.tryUseKevlarTotem(entity, source)) {
+            cir.setReturnValue(true);
         }
     }
 

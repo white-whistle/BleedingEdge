@@ -15,6 +15,7 @@
   ],
   "slots": [
     "head/face",
+    "chest/necklace",
     "chest/back",
     "legs/belt"
   ]

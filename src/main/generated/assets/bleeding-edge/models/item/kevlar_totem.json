@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "bleeding-edge:item/tactical_totem"
+    "layer0": "bleeding-edge:item/kevlar_totem"
   }
 }
