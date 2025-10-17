@@ -53,6 +53,8 @@ public class ModItems {
     // consumable
     public static final Item NUTRIENT_BLOCK = registerItem("nutrient_block", new Item(new FabricItemSettings().food(new FoodComponent.Builder().snack().saturationModifier(2f).hunger(2).build())));
 
+    // TODO: check why toggle hotkeys dont play sound (prolly this shit server play sound to everyone except player thing)
+
     // TODO:
     // ingredients
 
@@ -64,7 +66,7 @@ public class ModItems {
     public static final Item STIM = registerItem("stim", new Item(new FabricItemSettings().maxCount(1)));
 
     // gadgets
-    public static final Item TESLA_PACK = registerItem("tesla_pack", new HoverPackItem(new FabricItemSettings().maxCount(1))); // zap yourself and nearby entities, zapped entities affected by EMP
+    public static final Item TESLA_PACK = registerItem("tesla_pack", new TeslaPackItem(new FabricItemSettings().maxCount(1))); // zap yourself and nearby entities, zapped entities affected by EMP
 
     public static final Item MEDICORE = registerItem("medicore", new Item(new FabricItemSettings().maxCount(1))); // + belt slots
     public static final Item HEAVYCORE = registerItem("heavycore", new Item(new FabricItemSettings().maxCount(1))); // for tanks, + back slots - belt slots

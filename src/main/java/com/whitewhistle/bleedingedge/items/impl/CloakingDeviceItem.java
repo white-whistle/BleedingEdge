@@ -24,8 +24,6 @@ public class CloakingDeviceItem extends ModTrinketItem implements ElectricToggle
 
         if (!entity.hasStatusEffect(ModStatusEffects.EMP) && ModComponents.ENABLED.get(stack)) {
             entity.addStatusEffect(new StatusEffectInstance(ModStatusEffects.CLOAKED, 20, 0, true, false, false));
-        } else {
-            entity.removeStatusEffect(ModStatusEffects.CLOAKED);
         }
     }
 
