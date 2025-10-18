@@ -2,6 +2,7 @@
   "entities": [
     "player",
     "zombie",
+    "zombie_villager",
     "creeper",
     "skeleton",
     "pillager",
@@ -11,9 +12,11 @@
     "wither",
     "blaze",
     "husk",
+    "villager",
     "ender_dragon"
   ],
   "slots": [
+    "head/hat",
     "head/face",
     "chest/necklace",
     "chest/back",

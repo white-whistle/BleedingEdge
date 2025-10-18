@@ -24,8 +24,6 @@ public class ModItems {
     public static final Item REPAIR_SLOT = registerItem("repair_slot", new RepairSlotItem(new FabricItemSettings().maxCount(1)));
     public static final Item BRAIN_JAR = registerItem("brain_jar", new BrainJarItem(new FabricItemSettings().maxCount(1)));
     public static final Item BASIC_SLOT = registerItem("basic_slot", new SlotItem(new FabricItemSettings().maxCount(1)));
-    // change slot to accept one item when right clicked
-    // add slot behavior - slot r clicked on slot to swap contents if allowed
 
     // gadgets
     public static final Item CLOAKING_DEVICE = registerItem("cloaking_device", new CloakingDeviceItem(new FabricItemSettings().maxCount(1)));
@@ -38,6 +36,7 @@ public class ModItems {
     public static final Item OBSIDIAN_SASH = registerItem("obsidian_sash", new ObsidianSashItem(new FabricItemSettings().maxCount(1)));
     public static final Item KEVLAR_TOTEM = registerItem("kevlar_totem", new KevlarTotemItem(new FabricItemSettings().maxCount(1)));
     public static final Item TESLA_PACK = registerItem("tesla_pack", new TeslaPackItem(new FabricItemSettings().maxCount(1))); // zap yourself and nearby entities, zapped entities affected by EMP
+    public static final Item BRAIN_DRILL = registerItem("brain_drill", new BrainDrillItem(new FabricItemSettings().maxCount(1))); // brain extraction device, harms entities without helmets, damage is blocked by helmets but damages durability faster
 
 
     // ingredients
@@ -66,13 +65,12 @@ public class ModItems {
 
     // gadgets
 
+    public static final Item CREEPER_SANDALS = registerItem("creeper_sandals", new Item(new FabricItemSettings().maxCount(1))); // + belt slots
+    public static final Item SLIME_SOCKS = registerItem("slime_socks", new Item(new FabricItemSettings().maxCount(1))); // + belt slots
     public static final Item MEDICORE = registerItem("medicore", new Item(new FabricItemSettings().maxCount(1))); // + belt slots
     public static final Item HEAVYCORE = registerItem("heavycore", new Item(new FabricItemSettings().maxCount(1))); // for tanks, + back slots - belt slots
     public static final Item TACTICORE = registerItem("tacticore", new Item(new FabricItemSettings().maxCount(1))); // + face + legs + belt
     public static final Item SPIDERCORE = registerItem("spidercore", new Item(new FabricItemSettings().maxCount(1))); // + face + legs
-
-    // weapons
-    public static final Item BRAIN_EXTRACTOR = registerItem("brain_extractor", new Item(new FabricItemSettings())); // brain extraction device, harms entities without helmets, damage is blocked by helmets but damages durability faster
 
     // projectile
     // public static final Item ANTIGRAVITY_MINE = registerItem("antigravity_mine", new Item(new FabricItemSettings().maxCount(1)));

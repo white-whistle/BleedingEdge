@@ -1,5 +1,6 @@
 package com.whitewhistle.bleedingedge.render;
 
+import com.whitewhistle.bleedingedge.items.ModItems;
 import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.client.TrinketRenderer;
 import net.minecraft.client.MinecraftClient;
@@ -30,6 +31,11 @@ public class TrinketItemModelRenderer implements TrinketRenderer {
                     TrinketRenderer.translateToFace(matrices, playerModel, player, headYaw, headPitch);
                     matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
                 }
+                case "hat" -> {
+                    TrinketRenderer.translateToFace(matrices, playerModel, player, headYaw, headPitch);
+                    applyHatTranslations(stack, player, matrices);
+                    matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
+                }
                 case "back" -> {
                     TrinketRenderer.translateToChest(matrices, playerModel, player);
                     matrices.translate(0, -0.2f, 0.4f);
@@ -47,7 +53,7 @@ public class TrinketItemModelRenderer implements TrinketRenderer {
                 }
             }
 
-            matrices.scale(0.6f,0.6f,1f);
+            matrices.scale(0.6f, 0.6f, 1f);
 
             MinecraftClient.getInstance().getItemRenderer().renderItem(stack, ModelTransformationMode.FIXED, light, OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, null, 0);
             matrices.pop();
@@ -61,6 +67,11 @@ public class TrinketItemModelRenderer implements TrinketRenderer {
 
                     matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
                 }
+                case "hat" -> {
+                    translateToBipedFace(matrices, bipedEntityModel, headYaw, headPitch);
+                    applyHatTranslations(stack, entity, matrices);
+                    matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
+                }
                 case "back" -> {
                     translateToBipedChest(matrices, bipedEntityModel);
 
@@ -81,7 +92,37 @@ public class TrinketItemModelRenderer implements TrinketRenderer {
                 }
             }
 
-            matrices.scale(0.6f,0.6f,1f);
+            matrices.scale(0.6f, 0.6f, 1f);
+
+            MinecraftClient.getInstance().getItemRenderer().renderItem(stack, ModelTransformationMode.FIXED, light, OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, null, 0);
+            matrices.pop();
+        } else {
+            var slotName = slotReference.inventory().getSlotType().getName();
+            if (!slotName.equals("hat")) return;
+
+            // super generic renderer
+            matrices.push();
+
+            matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(headYaw));
+            matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(headPitch));
+
+            matrices.translate(0, 1.5, 0);
+            matrices.translate(0, -entity.getHeight(), 0);
+
+            var eyeHeight = entity.getStandingEyeHeight();
+            var height = entity.getHeight();
+            var delta = height - eyeHeight;
+
+
+            matrices.translate(0, -delta, 0);
+
+            matrices.translate(0, 0.5, -0.3f); //inverse hat transforms
+
+            applyHatTranslations(stack, entity, matrices);
+
+            matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
+
+            matrices.scale(0.6f, 0.6f, 1f);
 
             MinecraftClient.getInstance().getItemRenderer().renderItem(stack, ModelTransformationMode.FIXED, light, OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, null, 0);
             matrices.pop();
@@ -89,15 +130,27 @@ public class TrinketItemModelRenderer implements TrinketRenderer {
 
     }
 
+    private void applyHatTranslations(ItemStack stack, LivingEntity livingEntity, MatrixStack matrices) {
+        if (stack.isOf(ModItems.BRAIN_DRILL)) {
+            var progress = 1 - (livingEntity.getHealth() / livingEntity.getMaxHealth());
+
+            matrices.translate(0, -0.5f + (0.6f * progress), 0.3f);
+            return;
+        }
+
+        matrices.translate(0, -0.5f, 0.3f);
+    }
+
     private void translateToBipedChest(MatrixStack matrices, BipedEntityModel<? extends LivingEntity> bipedEntityModel) {
         matrices.multiply(RotationAxis.POSITIVE_Y.rotation(bipedEntityModel.body.yaw));
         matrices.translate(0.0F, 0.4F, -0.16F);
     }
+
     private void translateToBipedFace(MatrixStack matrices, BipedEntityModel<? extends LivingEntity> bipedEntityModel, float headYaw, float headPitch) {
         matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(headYaw));
         matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(headPitch));
 
-		matrices.translate(0.0F, -0.25F, -0.3F);
+        matrices.translate(0.0F, -0.25F, -0.3F);
     }
 
 }

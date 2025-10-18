@@ -6,7 +6,8 @@
     "EnchantmentMixin",
     "ExampleMixin",
     "ItemStackMixin",
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "VillagerEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

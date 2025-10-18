@@ -4,6 +4,7 @@ import com.whitewhistle.bleedingedge.effects.ModStatusEffects;
 import com.whitewhistle.bleedingedge.items.ModFuelItems;
 import com.whitewhistle.bleedingedge.items.ModItemGroups;
 import com.whitewhistle.bleedingedge.items.ModItems;
+import com.whitewhistle.bleedingedge.items.impl.BrainDrillItem;
 import com.whitewhistle.bleedingedge.nbt.ModComponents;
 import com.whitewhistle.bleedingedge.network.ModServerPacketHandler;
 import net.fabricmc.api.ModInitializer;
@@ -27,6 +28,8 @@ public class BleedingEdge implements ModInitializer {
         ModItemGroups.registerGroups();
         ModFuelItems.init();
         ModServerPacketHandler.init();
+
+        BrainDrillItem.registerDeathListeners();
 
         LOGGER.info("++ they wont see you coming ++");
     }

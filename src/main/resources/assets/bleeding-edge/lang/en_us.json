@@ -19,7 +19,7 @@
   "item.bleeding-edge.nutrient_block": "Nutrient Block",
   "item.bleeding-edge.obsidian_sash": "Obsidian Sash",
   "item.bleeding-edge.small_brain": "Small Brain",
-  "item.bleeding-edge.brain": "Brain",
+  "item.bleeding-edge.brain": "Smart Brain",
   "item.bleeding-edge.rotten_brain": "Rotten Brain",
   "item.bleeding-edge.steel_brain": "Steel Brain",
   "item.bleeding-edge.brain_jar": "Brain Jar",
@@ -29,6 +29,7 @@
   "item.bleeding-edge.basic_slot": "Basic Slot",
   "item.bleeding-edge.kevlar_totem": "Kevlar Totem",
   "item.bleeding-edge.supply_drop": "Supply Drop",
+  "item.bleeding-edge.brain_drill": "Brain Drill",
   "effect.bleeding-edge.cloaked": "Cloaked",
   "effect.bleeding-edge.ir_vision": "IR Vision",
   "effect.bleeding-edge.threat_analysis": "Threat Analysis",
@@ -51,6 +52,9 @@
   "tooltip.bleeding-edge.ability_hotkey.description": "%s [%s]",
   "tooltip.bleeding-edge.breach_hammer.description.charge": "Charge to prime your next hit",
   "tooltip.bleeding-edge.breach_hammer.description.charged": "Charged. handle with care",
+  "tooltip.bleeding-edge.brain_drill.description1": "Extracts brains.",
+  "tooltip.bleeding-edge.brain_drill.description2": "Right click an entity to equip",
+  "tooltip.bleeding-edge.brain_drill.description3": "Smart entities wont be willing to participate..",
   "tooltip.bleeding-edge.tesla_pack.description1": "Electrocute you and nearby entities",
   "tooltip.bleeding-edge.tesla_pack.description2": "but you take half as much damage",
   "tooltip.bleeding-edge.storm_bender.description1": "Channels lightning through the user",
@@ -68,5 +72,6 @@
   "tooltip.bleeding-edge.toggled-item.err": "ERR",
   "tooltip.bleeding-edge.toggled-item.emp.disclaimer": "Affected by EMP",
   "tooltip.bleeding-edge.applied-item.title": "Applicable",
+  "death.attack.brain_damage": "%1$s wont need to think anymore..",
   "tooltip.bleeding-edge.applied-item.description": "Click on an item in a slot to apply"
 }
