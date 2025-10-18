@@ -7,6 +7,7 @@ import com.whitewhistle.bleedingedge.util.ModIdentifier;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 
 import static com.whitewhistle.bleedingedge.util.RandomUtil.r0;
@@ -35,11 +36,22 @@ public interface ToggledItem {
     }
 
     default void playToggleSound(PlayerEntity player, boolean enabled) {
-        if (enabled) {
-            player.playSound(SoundEvents.BLOCK_END_PORTAL_FRAME_FILL, r0(), r0());
+        var world = player.getWorld();
+
+        if (world.isClient) {
+            if (enabled) {
+                player.playSound(SoundEvents.BLOCK_END_PORTAL_FRAME_FILL, r0(), r0());
+            } else {
+                player.playSound(SoundEvents.BLOCK_FIRE_EXTINGUISH, r0(), r0());
+            }
         } else {
-            player.playSound(SoundEvents.BLOCK_FIRE_EXTINGUISH, r0(), r0());
+            if (enabled) {
+                world.playSound(null, player.getX(), player.getY(), player.getZ() ,SoundEvents.BLOCK_END_PORTAL_FRAME_FILL, SoundCategory.PLAYERS, r0(), r0());
+            } else {
+                world.playSound(null, player.getX(), player.getY(), player.getZ() ,SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.PLAYERS, r0(), r0());
+            }
         }
+
     }
 
     default boolean isEnabled(LivingEntity livingEntity, ItemStack stack) {

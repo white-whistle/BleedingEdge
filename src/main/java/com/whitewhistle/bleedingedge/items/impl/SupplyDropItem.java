@@ -36,11 +36,11 @@ public class SupplyDropItem extends Item {
 
             var inventoryMap = t.getInventory();
 
-            var cloakingDeviceStack = ModItems.CLOAKING_DEVICE.getDefaultStack();
-            ModComponents.ENABLED.set(cloakingDeviceStack, true);
-            cloakingDeviceStack.addEnchantment(Enchantments.VANISHING_CURSE, 1);
+            var gadgetStack = ModItems.TESLA_PACK.getDefaultStack();
+            ModComponents.ENABLED.set(gadgetStack, true);
+            gadgetStack.addEnchantment(Enchantments.VANISHING_CURSE, 1);
 
-            inventoryMap.get("chest").get("back").setStack(0, cloakingDeviceStack);
+            inventoryMap.get("chest").get("back").setStack(0, gadgetStack);
 
             user.playSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, SoundCategory.PLAYERS, r0(), r0());
 

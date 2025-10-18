@@ -11,11 +11,14 @@ import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -37,13 +40,24 @@ public class ObsidianSashItem extends ModTrinketItem implements IHasAbilities {
 
             if (player.hasStatusEffect(ModStatusEffects.EMP)) return;
 
+            var world = player.getWorld();
+            SoundEvent sound;
+
             if (player.hasStatusEffect(ModStatusEffects.QUANTUM_TUNNELING)) {
                 player.addStatusEffect(new StatusEffectInstance(ModStatusEffects.CANCEL_QUANTUM_TUNNELING, 1));
                 player.removeStatusEffect(ModStatusEffects.QUANTUM_TUNNELING);
+                player.removeStatusEffect(StatusEffects.NAUSEA);
                 player.removeStatusEffect(ModStatusEffects.CANCEL_QUANTUM_TUNNELING);
+
+                sound = SoundEvents.BLOCK_FIRE_EXTINGUISH;
             } else {
-                player.addStatusEffect(new StatusEffectInstance(ModStatusEffects.QUANTUM_TUNNELING, 20 * 3));
+                player.addStatusEffect(new StatusEffectInstance(ModStatusEffects.QUANTUM_TUNNELING, 20 * 5));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 20 * 10, 10, true, false, false));
+
+                sound = SoundEvents.BLOCK_PORTAL_TRIGGER;
             }
+
+            world.playSound(null, player.getX(), player.getY(), player.getZ() , sound, SoundCategory.PLAYERS, r0(), r0());
         }
     };
     public static final List<Ability> ABILITIES = List.of(

@@ -71,6 +71,7 @@ public class ModItems {
     public static final Item MEDICORE = registerItem("medicore", new Item(new FabricItemSettings().maxCount(1))); // + belt slots
     public static final Item HEAVYCORE = registerItem("heavycore", new Item(new FabricItemSettings().maxCount(1))); // for tanks, + back slots - belt slots
     public static final Item TACTICORE = registerItem("tacticore", new Item(new FabricItemSettings().maxCount(1))); // + face + legs + belt
+    public static final Item SPIDERCORE = registerItem("spidercore", new Item(new FabricItemSettings().maxCount(1))); // + face + legs
     // grounded? EMP resistance but cannot move
 
     // weapons

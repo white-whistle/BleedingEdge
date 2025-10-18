@@ -26,9 +26,9 @@ public class ThreatVisorItem extends ModTrinketItem implements ElectricToggledIt
         super.tick(stack, slot, entity);
 
         if (this.isEnabled(entity, stack)) {
-            entity.addStatusEffect(new StatusEffectInstance(ModStatusEffects.THREAT_VISION, 20, 0, true, false, false));
+            entity.addStatusEffect(new StatusEffectInstance(ModStatusEffects.THREAT_ANALYSIS, 20, 0, true, false, false));
         } else {
-            entity.removeStatusEffect(ModStatusEffects.THREAT_VISION);
+            entity.removeStatusEffect(ModStatusEffects.THREAT_ANALYSIS);
         }
     }
 

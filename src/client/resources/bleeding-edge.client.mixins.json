@@ -8,7 +8,8 @@
     "ExampleClientMixin",
     "GameRendererMixin",
     "HandledScreenAccessor",
-    "ItemRendererMixin"
+    "ItemRendererMixin",
+    "WorldRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
