@@ -1,0 +1,6 @@
+{
+  "parent": "bleeding-edge:item/storm_bender",
+  "textures": {
+    "layer0": "bleeding-edge:item/storm_bender_pulling_0"
+  }
+}

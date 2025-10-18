@@ -37,6 +37,8 @@ public class ModItems {
     public static final Item STEEL_KIDNEY = registerItem("steel_kidney", new SteelKidneyItem(new FabricItemSettings().maxCount(1)));
     public static final Item OBSIDIAN_SASH = registerItem("obsidian_sash", new ObsidianSashItem(new FabricItemSettings().maxCount(1)));
     public static final Item KEVLAR_TOTEM = registerItem("kevlar_totem", new KevlarTotemItem(new FabricItemSettings().maxCount(1)));
+    public static final Item TESLA_PACK = registerItem("tesla_pack", new TeslaPackItem(new FabricItemSettings().maxCount(1))); // zap yourself and nearby entities, zapped entities affected by EMP
+
 
     // ingredients
     public static final Item CARBON_INGOT = registerItem("carbon_ingot", new Item(new FabricItemSettings()));
@@ -49,39 +51,33 @@ public class ModItems {
 
     // weapons
     public static final Item BREACH_HAMMER = registerItem("breach_hammer", new BreachHammer(ModToolMaterials.CARBON, 2, 26.5f, -3.3f, new FabricItemSettings().maxCount(1)));
+    public static final Item STORM_BENDER = registerItem("storm_bender", new StormBenderItem(new FabricItemSettings().maxCount(1))); // calls lightning to self, shoots out EMP projectile (like wardens) maybe call it storm rail instead? looks likea bow so storm bender is more fitting
 
     // consumable
     public static final Item NUTRIENT_BLOCK = registerItem("nutrient_block", new Item(new FabricItemSettings().food(new FoodComponent.Builder().snack().saturationModifier(2f).hunger(2).build())));
 
-    // TODO: check why toggle hotkeys dont play sound (prolly this shit server play sound to everyone except player thing)
 
-    // TODO:
-    // ingredients
-
+    // TODO
     // tools
-    // feed sugar to get science
     public static final Item ASSEMBLY_SLOT = registerItem("assembly_slot", new SlotItem(new FabricItemSettings().maxCount(1)));
 
-    // consumable
-    public static final Item STIM = registerItem("stim", new Item(new FabricItemSettings().maxCount(1)));
+    // // consumable
+    // public static final Item STIM = registerItem("stim", new Item(new FabricItemSettings().maxCount(1)));
 
     // gadgets
-    public static final Item TESLA_PACK = registerItem("tesla_pack", new TeslaPackItem(new FabricItemSettings().maxCount(1))); // zap yourself and nearby entities, zapped entities affected by EMP
 
     public static final Item MEDICORE = registerItem("medicore", new Item(new FabricItemSettings().maxCount(1))); // + belt slots
     public static final Item HEAVYCORE = registerItem("heavycore", new Item(new FabricItemSettings().maxCount(1))); // for tanks, + back slots - belt slots
     public static final Item TACTICORE = registerItem("tacticore", new Item(new FabricItemSettings().maxCount(1))); // + face + legs + belt
     public static final Item SPIDERCORE = registerItem("spidercore", new Item(new FabricItemSettings().maxCount(1))); // + face + legs
-    // grounded? EMP resistance but cannot move
 
     // weapons
     public static final Item BRAIN_EXTRACTOR = registerItem("brain_extractor", new Item(new FabricItemSettings())); // brain extraction device, harms entities without helmets, damage is blocked by helmets but damages durability faster
-    public static final Item STORM_BENDER = registerItem("storm_bender", new Item(new FabricItemSettings())); // calls lightning to self, shoots out EMP projectile (like wardens) maybe call it storm rail instead? looks likea bow so storm bender is more fitting
 
     // projectile
-    public static final Item ANTIGRAVITY_MINE = registerItem("antigravity_mine", new Item(new FabricItemSettings().maxCount(1)));
+    // public static final Item ANTIGRAVITY_MINE = registerItem("antigravity_mine", new Item(new FabricItemSettings().maxCount(1)));
     // misc
-    public static final Item REMOTE_DETONATOR = registerItem("remote_detonator", new Item(new FabricItemSettings().maxCount(1))); // maybe repurpose to activate bound toggleable items? i think we will just use hotkeys so maybe we scrap this
+    // public static final Item REMOTE_DETONATOR = registerItem("remote_detonator", new Item(new FabricItemSettings().maxCount(1))); // maybe repurpose to activate bound toggleable items? i think we will just use hotkeys so maybe we scrap this
 
 
     public static <T extends Item> T registerItem(String name, T item) {

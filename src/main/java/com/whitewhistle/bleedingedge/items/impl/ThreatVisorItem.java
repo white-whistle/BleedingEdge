@@ -41,7 +41,7 @@ public class ThreatVisorItem extends ModTrinketItem implements ElectricToggledIt
 
         var player = CommonBridge.INSTANCE.getClientPlayer();
         if (player != null) {
-            tooltip.add(Text.translatable("tooltip.bleeding-edge.threat_visor.description.own_threat", player.getAttributeValue(ModEntityAttributes.THREAT)).styled(s -> s.withColor(Formatting.GRAY)));
+            tooltip.add(Text.translatable("tooltip.bleeding-edge.threat_visor.description.own_threat", (int)player.getAttributeValue(ModEntityAttributes.THREAT)).styled(s -> s.withColor(Formatting.GRAY)));
         }
 
         tooltip.add(Text.empty());
