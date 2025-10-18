@@ -1,5 +1,7 @@
 package com.whitewhistle.bleedingedge.util;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.List;
 import java.util.Random;
 
@@ -8,10 +10,21 @@ public class RandomUtil {
     public static float r0() {
         return 0.5f + (r.nextFloat() * 0.5f);
     }
+    public static float rf() {
+        return r.nextFloat();
+    }
+
+    public static float rsf() {
+        return (r.nextFloat() * 2) - 1;
+    }
 
     public static <T> T sample(List<T> list) {
         if (list.isEmpty()) throw new IllegalArgumentException("List is empty");
         int index = r.nextInt(list.size());
         return list.get(index);
+    }
+
+    public static Vec3d randomVec3() {
+        return new Vec3d(rsf(), rsf(), rsf()).normalize();
     }
 }

@@ -3,6 +3,7 @@ package com.whitewhistle.bleedingedge;
 import com.whitewhistle.bleedingedge.gui.particles.GuiParticleRenderer;
 import com.whitewhistle.bleedingedge.hooks.ClientBridge;
 import com.whitewhistle.bleedingedge.network.ModClientPacketHandler;
+import com.whitewhistle.bleedingedge.particles.client.ModClientParticles;
 import com.whitewhistle.bleedingedge.render.ModTrinketRenderer;
 import com.whitewhistle.bleedingedge.render.ThreatOverlayRenderer;
 import com.whitewhistle.bleedingedge.shaders.ModShaders;
@@ -21,5 +22,6 @@ public class BleedingEdgeClient implements ClientModInitializer {
 		ModClientPacketHandler.register();
 		ModTooltipComponents.register();
 		ThreatOverlayRenderer.register();
+		ModClientParticles.register();
 	}
 }
