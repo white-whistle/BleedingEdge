@@ -21,4 +21,10 @@ public class ItemStackUtil {
         source.setCount(Math.max(remainder, 0));
     }
 
+    public static boolean isStackFull(ItemStack stack) {
+        if (stack.isEmpty()) return false;
+
+        return stack.getCount() >= stack.getMaxCount();
+    }
+
 }

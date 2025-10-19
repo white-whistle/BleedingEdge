@@ -64,17 +64,14 @@ public class ModItems {
 
     // TODO
     // tools
-    public static final Item ASSEMBLY_SLOT = registerItem("assembly_slot", new SlotItem(new FabricItemSettings().maxCount(1)));
-
-    // // consumable
-    // public static final Item STIM = registerItem("stim", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item ASSEMBLY_SLOT = registerItem("assembly_slot", new AssemblySlotItem(new FabricItemSettings().maxCount(1)));
 
     // gadgets
-
     public static final Item CREEPER_SANDALS = registerItem("creeper_sandals", new Item(new FabricItemSettings().maxCount(1))); // + belt slots
     public static final Item SLIME_SOCKS = registerItem("slime_socks", new Item(new FabricItemSettings().maxCount(1))); // + belt slots
 
-
+    // // consumable
+    // public static final Item STIM = registerItem("stim", new Item(new FabricItemSettings().maxCount(1)));
 
     // projectile
     // public static final Item ANTIGRAVITY_MINE = registerItem("antigravity_mine", new Item(new FabricItemSettings().maxCount(1)));

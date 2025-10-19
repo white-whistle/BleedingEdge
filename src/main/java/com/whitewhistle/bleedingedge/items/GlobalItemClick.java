@@ -1,5 +1,6 @@
 package com.whitewhistle.bleedingedge.items;
 
+import com.whitewhistle.bleedingedge.items.impl.AssemblySlotItem;
 import com.whitewhistle.bleedingedge.items.impl.SlotItem;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.StackReference;
@@ -49,6 +50,12 @@ public class GlobalItemClick {
 
             if (item instanceof SlotItem slotItem) {
                 if (slotItem.applyItemToSlot(player, stack, cursorStackReference)) {
+                    return Optional.of(true);
+                }
+            }
+
+            if (item instanceof AssemblySlotItem assemblySlotItem) {
+                if (assemblySlotItem.handleCraft(player, stack, slot, cursorStack, cursorStackReference)) {
                     return Optional.of(true);
                 }
             }
