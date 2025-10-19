@@ -18,6 +18,7 @@
   "slots": [
     "head/hat",
     "head/face",
+    "head/core",
     "chest/necklace",
     "chest/back",
     "legs/belt"

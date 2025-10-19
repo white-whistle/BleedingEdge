@@ -3,6 +3,8 @@ package com.whitewhistle.bleedingedge.items;
 import com.whitewhistle.bleedingedge.BleedingEdge;
 import com.whitewhistle.bleedingedge.items.impl.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -38,13 +40,17 @@ public class ModItems {
     public static final Item TESLA_PACK = registerItem("tesla_pack", new TeslaPackItem(new FabricItemSettings().maxCount(1))); // zap yourself and nearby entities, zapped entities affected by EMP
     public static final Item BRAIN_DRILL = registerItem("brain_drill", new BrainDrillItem(new FabricItemSettings().maxCount(1))); // brain extraction device, harms entities without helmets, damage is blocked by helmets but damages durability faster
 
+    public static final Item TACTICORE = registerItem("tacticore", new TacticoreItem(new FabricItemSettings().maxCount(1))); // + face + legs + belt
+    public static final Item MEDICORE = registerItem("medicore", new MedicoreItem(new FabricItemSettings().maxCount(1))); // + belt slots
+    public static final Item HEAVYCORE = registerItem("heavycore", new HeavycoreItem(new FabricItemSettings().maxCount(1))); // for tanks, + back slots - belt slots
+    public static final Item SPIDERCORE = registerItem("spidercore", new SpidercoreItem(new FabricItemSettings().maxCount(1))); // + face + legs
 
     // ingredients
     public static final Item CARBON_INGOT = registerItem("carbon_ingot", new Item(new FabricItemSettings()));
-    public static final Item SMALL_BRAIN = registerItem("small_brain", new BrainItem(new FabricItemSettings(),1));
-    public static final Item ROTTEN_BRAIN = registerItem("rotten_brain", new BrainItem(new FabricItemSettings(),3));
-    public static final BrainItem BRAIN = registerItem("brain", new BrainItem(new FabricItemSettings(), 10));
-    public static final Item STEEL_BRAIN = registerItem("steel_brain", new BrainItem(new FabricItemSettings(), 25));
+    public static final Item SMALL_BRAIN = registerItem("small_brain", new BrainItem(new FabricItemSettings().food(new FoodComponent.Builder().snack().saturationModifier(0.1f).hunger(2).build()),1));
+    public static final Item ROTTEN_BRAIN = registerItem("rotten_brain", new BrainItem(new FabricItemSettings().food(new FoodComponent.Builder().saturationModifier(0.1f).hunger(3).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 20 * 10), 1).build()),3));
+    public static final BrainItem BRAIN = registerItem("brain", new BrainItem(new FabricItemSettings().food(new FoodComponent.Builder().saturationModifier(0.7f).hunger(4).build()), 10));
+    public static final Item STEEL_BRAIN = registerItem("steel_brain", new BrainItem(new FabricItemSettings().food(new FoodComponent.Builder().alwaysEdible().saturationModifier(0f).hunger(0).build()), 25));
     public static final Item EUREKA = registerItem("eureka", new Item(new FabricItemSettings()));
     public static final Item TECHNOLOGY = registerItem("technology", new Item(new FabricItemSettings())); // craft science with iron and carbon
 
@@ -67,10 +73,8 @@ public class ModItems {
 
     public static final Item CREEPER_SANDALS = registerItem("creeper_sandals", new Item(new FabricItemSettings().maxCount(1))); // + belt slots
     public static final Item SLIME_SOCKS = registerItem("slime_socks", new Item(new FabricItemSettings().maxCount(1))); // + belt slots
-    public static final Item MEDICORE = registerItem("medicore", new Item(new FabricItemSettings().maxCount(1))); // + belt slots
-    public static final Item HEAVYCORE = registerItem("heavycore", new Item(new FabricItemSettings().maxCount(1))); // for tanks, + back slots - belt slots
-    public static final Item TACTICORE = registerItem("tacticore", new Item(new FabricItemSettings().maxCount(1))); // + face + legs + belt
-    public static final Item SPIDERCORE = registerItem("spidercore", new Item(new FabricItemSettings().maxCount(1))); // + face + legs
+
+
 
     // projectile
     // public static final Item ANTIGRAVITY_MINE = registerItem("antigravity_mine", new Item(new FabricItemSettings().maxCount(1)));

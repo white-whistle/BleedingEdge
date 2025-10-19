@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "bleeding-edge:tacticore",
+    "bleeding-edge:medicore",
+    "bleeding-edge:heavycore",
+    "bleeding-edge:spidercore"
+  ]
+}

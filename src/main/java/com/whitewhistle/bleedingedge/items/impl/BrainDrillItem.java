@@ -3,6 +3,7 @@ package com.whitewhistle.bleedingedge.items.impl;
 import com.whitewhistle.bleedingedge.ModDamageTypes;
 import com.whitewhistle.bleedingedge.items.ModItems;
 import dev.emi.trinkets.api.SlotReference;
+import dev.emi.trinkets.api.TrinketsApi;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.EquipmentSlot;
@@ -65,6 +66,16 @@ public class BrainDrillItem extends ModTrinketItem{
     }
 
     public static Item getEntityBrain(LivingEntity entity) {
+        var o = TrinketsApi.getTrinketComponent(entity);
+        if (o.isPresent()) {
+            var trinkets = o.get();
+
+            var coreModifiers = trinkets.getModifiers().get("head/core");
+            if (coreModifiers.stream().anyMatch(m -> m.getId().equals(BrainItem.STEEL_BRAIN_CORE_SLOT_UUID))) {
+                return ModItems.STEEL_BRAIN;
+            }
+        }
+
         if (entity instanceof VillagerEntity) {
             return ModItems.BRAIN;
         }
@@ -80,6 +91,16 @@ public class BrainDrillItem extends ModTrinketItem{
         ServerLivingEntityEvents.AFTER_DEATH.register((entity, damageSource) -> {
             if (damageSource.isOf(ModDamageTypes.BRAIN_DAMAGE)) {
                 entity.dropItem(getEntityBrain(entity));
+
+                var o = TrinketsApi.getTrinketComponent(entity);
+                if (o.isPresent()) {
+                    var trinkets = o.get();
+
+                    var coreModifiers = trinkets.getModifiers().get("head/core");
+                    if (coreModifiers.stream().anyMatch(m -> m.getId().equals(BrainItem.STEEL_BRAIN_CORE_SLOT_UUID))) {
+                        trinkets.removeModifiers(BrainItem.STEEL_BRAIN_MODIFIERS);
+                    }
+                }
             }
         });
     }

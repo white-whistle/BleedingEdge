@@ -1,6 +1,9 @@
 {
   "itemgroup.bleeding-edge": "Bleeding Edge",
-  "item.bleeding-edge.tacticore": "Personal Tacticore",
+  "item.bleeding-edge.tacticore": "TACTICore",
+  "item.bleeding-edge.heavycore": "HEAVYCore",
+  "item.bleeding-edge.medicore": "MEDICore",
+  "item.bleeding-edge.spidercore": "SPIDERCore",
   "item.bleeding-edge.carbon_ingot": "Carbon Ingot",
   "item.bleeding-edge.cloaking_device": "Cloaking Device",
   "item.bleeding-edge.shield_generator": "Shield Generator",
@@ -66,12 +69,14 @@
   "tooltip.bleeding-edge.supply_drop.description2": "Equips entities with random gadgets",
   "tooltip.bleeding-edge.threat_visor.description": "Displays threat level of visible entities",
   "tooltip.bleeding-edge.threat_visor.description.own_threat": "[your threat: %d]",
+  "tooltip.bleeding-edge.steel_brain.description": "Consume to gain a core slot",
   "tooltip.bleeding-edge.toggled-item.description": "[Status: %s]",
   "tooltip.bleeding-edge.toggled-item.on": "ON",
   "tooltip.bleeding-edge.toggled-item.off": "OFF",
   "tooltip.bleeding-edge.toggled-item.err": "ERR",
   "tooltip.bleeding-edge.toggled-item.emp.disclaimer": "Affected by EMP",
   "tooltip.bleeding-edge.applied-item.title": "Applicable",
+  "trinkets.slot.head.core": "Core",
   "death.attack.brain_damage": "%1$s wont need to think anymore..",
   "tooltip.bleeding-edge.applied-item.description": "Click on an item in a slot to apply"
 }

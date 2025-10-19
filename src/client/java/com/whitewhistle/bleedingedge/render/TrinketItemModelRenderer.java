@@ -41,6 +41,13 @@ public class TrinketItemModelRenderer implements TrinketRenderer {
                     matrices.translate(0, -0.2f, 0.4f);
                     matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
                 }
+                case "core" -> {
+                    TrinketRenderer.translateToChest(matrices, playerModel, player);
+                    matrices.translate(-0.6f, -1.0f, 1f);
+                    matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(headYaw));
+                    matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(headPitch));
+                    matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
+                }
                 case "belt" -> {
                     TrinketRenderer.translateToChest(matrices, playerModel, player);
                     matrices.translate(0, 0.3f, 0);
