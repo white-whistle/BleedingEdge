@@ -7,6 +7,9 @@ most of the items either have a direct counter item (invis vs IR vision), or gen
 
 <img width="656" height="427" alt="image" src="https://github.com/user-attachments/assets/aececdf7-a7ab-4886-9c31-6fd1d1cc0b30" />
 
+## Dependencies
+this mod depends on `Trinkets`, `Satin`, and `PlayerAbilityLib`
+
 ## Progression
 to begin using this mod, you will need to first smelt some coal into `Carbon Ingot`s
 most of the mod's content uses carbon so you better stock up on a bunch
