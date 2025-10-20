@@ -84,7 +84,7 @@ public class SlotItem extends Item {
                 var splitStack = cursorStack.split(1);
                 ModComponents.PROCESSING_STACK.set(stack, splitStack);
 
-                this.onItemApplySuccess(player, stack, cursorStack);
+                this.onItemApplySuccess(player, stack, splitStack);
 
                 return true;
             }

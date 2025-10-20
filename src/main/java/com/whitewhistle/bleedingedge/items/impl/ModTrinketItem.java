@@ -16,6 +16,7 @@ public class ModTrinketItem extends TrinketItem {
     public static final int MINOR_THREAT = 1;
     public static final int MODERATE_THREAT = 3;
     public static final int MAJOR_THREAT = 10;
+    public static final int EXTREME_THREAT = 20;
 
     public ModTrinketItem(Settings settings) {
         super(settings);

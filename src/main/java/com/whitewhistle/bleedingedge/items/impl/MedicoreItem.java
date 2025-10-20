@@ -18,7 +18,7 @@ public class MedicoreItem extends ModTrinketItem{
 
     @Override
     public int getThreatLevel() {
-        return MODERATE_THREAT;
+        return MAJOR_THREAT;
     }
 
     @Override

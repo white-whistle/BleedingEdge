@@ -1,13 +1,20 @@
 package com.whitewhistle.bleedingedge.items.impl;
 
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
 import com.whitewhistle.bleedingedge.effects.ModStatusEffects;
+import com.whitewhistle.bleedingedge.entity.ModEntityAttributes;
 import com.whitewhistle.bleedingedge.items.IHasModel;
 import com.whitewhistle.bleedingedge.particles.ModParticleTypes;
+import com.whitewhistle.bleedingedge.util.UuidUtil;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.data.client.Model;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -32,6 +39,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+import static com.whitewhistle.bleedingedge.items.impl.ModTrinketItem.MAJOR_THREAT;
 import static com.whitewhistle.bleedingedge.util.RandomUtil.r0;
 
 public class StormBenderItem extends BowItem implements IHasModel {
@@ -44,6 +52,11 @@ public class StormBenderItem extends BowItem implements IHasModel {
     public static final int TARGET_EMP_TICKS = 20 * 15;
     public static final int BLAST_EMP_TICKS = 20 * 5;
     public static final int FAIL_EMP_TICKS = 20 * 3;
+
+    private static final ImmutableMultimap<EntityAttribute, EntityAttributeModifier> HELD_MODIFIERS = ImmutableMultimap.<EntityAttribute, EntityAttributeModifier>builder().put(
+            ModEntityAttributes.THREAT,
+            new EntityAttributeModifier(UuidUtil.from("storm_bender_held"), "Storm bender threat", MAJOR_THREAT, EntityAttributeModifier.Operation.ADDITION)
+    ).build();
 
     public StormBenderItem(Settings settings) {
         super(settings);
@@ -187,5 +200,14 @@ public class StormBenderItem extends BowItem implements IHasModel {
     @Override
     public Model getBaseModel() {
         return null;
+    }
+
+    @Override
+    public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(ItemStack stack, EquipmentSlot slot) {
+        if (slot == EquipmentSlot.MAINHAND) {
+            return HELD_MODIFIERS;
+        }
+
+        return super.getAttributeModifiers(stack, slot);
     }
 }

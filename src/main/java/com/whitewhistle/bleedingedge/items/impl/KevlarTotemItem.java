@@ -4,16 +4,29 @@ import com.whitewhistle.bleedingedge.effects.ModStatusEffects;
 import com.whitewhistle.bleedingedge.items.ModItems;
 import com.whitewhistle.bleedingedge.network.S2CSender;
 import dev.emi.trinkets.api.TrinketsApi;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.item.ItemStack;
 import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
+import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class KevlarTotemItem extends ModTrinketItem{
     public KevlarTotemItem(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    public int getThreatLevel() {
+        return MAJOR_THREAT;
     }
 
     public static boolean tryUseKevlarTotem(LivingEntity entity, DamageSource source) {
@@ -50,5 +63,11 @@ public class KevlarTotemItem extends ModTrinketItem{
             return true;
     }
 
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        super.appendTooltip(stack, world, tooltip, context);
 
+        tooltip.add(Text.translatable("tooltip.bleeding-edge.kevlar_totem.description1").styled(s -> s.withColor(Formatting.GRAY)));
+        tooltip.add(Text.translatable("tooltip.bleeding-edge.kevlar_totem.description2").styled(s -> s.withColor(Formatting.GRAY)));
+    }
 }

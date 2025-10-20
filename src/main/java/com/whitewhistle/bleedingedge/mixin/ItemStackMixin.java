@@ -3,10 +3,7 @@ package com.whitewhistle.bleedingedge.mixin;
 import com.whitewhistle.bleedingedge.ability.IHasAbilities;
 import com.whitewhistle.bleedingedge.common.CommonBridge;
 import com.whitewhistle.bleedingedge.effects.ModStatusEffects;
-import com.whitewhistle.bleedingedge.items.AppliedItem;
-import com.whitewhistle.bleedingedge.items.ElectricToggledItem;
-import com.whitewhistle.bleedingedge.items.GlobalItemClick;
-import com.whitewhistle.bleedingedge.items.ToggledItem;
+import com.whitewhistle.bleedingedge.items.*;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.StackReference;
@@ -73,6 +70,10 @@ public abstract class ItemStackMixin {
         if (item instanceof AppliedItem appliedItem) {
             tooltip.add(Text.empty());
             tooltip.add(appliedItem.getTooltip(stack));
+        }
+
+        if (item == ModItems.BRAIN_DRILL) {
+            tooltip.add(Text.translatable("tooltip.bleeding-edge.brain_drill.ouch").styled(s -> s.withColor(Formatting.BLUE)));
         }
     }
 

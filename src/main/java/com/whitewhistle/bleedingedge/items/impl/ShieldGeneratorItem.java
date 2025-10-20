@@ -19,6 +19,11 @@ public class ShieldGeneratorItem extends ModTrinketItem implements ElectricToggl
     }
 
     @Override
+    public int getThreatLevel() {
+        return MAJOR_THREAT;
+    }
+
+    @Override
     public void tick(ItemStack stack, SlotReference slot, LivingEntity entity) {
         super.tick(stack, slot, entity);
 

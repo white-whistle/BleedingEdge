@@ -18,7 +18,7 @@ public class HeavycoreItem extends ModTrinketItem{
 
     @Override
     public int getThreatLevel() {
-        return MODERATE_THREAT;
+        return EXTREME_THREAT;
     }
 
     @Override
