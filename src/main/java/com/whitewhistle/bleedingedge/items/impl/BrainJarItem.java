@@ -108,7 +108,7 @@ public class BrainJarItem extends SlotItem{
     public boolean isItemApplicableCatalyst(PlayerEntity player, ItemStack stack, ItemStack cursorStack) {
         if (ModComponents.CALORIES.get(stack) > 0) return false;
 
-        return cursorStack.isFood();
+        return cursorStack.isFood() && !(cursorStack.getItem() instanceof BrainItem);
     }
 
     @Override
