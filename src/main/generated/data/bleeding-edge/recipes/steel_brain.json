@@ -1,0 +1,26 @@
+{
+  "type": "bleeding-edge:assembler_recipe",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "bleeding-edge:brain"
+    },
+    "C": {
+      "item": "bleeding-edge:carbon_ingot"
+    },
+    "T": {
+      "item": "bleeding-edge:technology"
+    }
+  },
+  "pattern": [
+    " CCC ",
+    "CBTBC",
+    "CBTBC",
+    "CCTCC",
+    "  T  "
+  ],
+  "result": {
+    "item": "bleeding-edge:steel_brain"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,26 @@
+{
+  "type": "bleeding-edge:assembler_recipe",
+  "category": "equipment",
+  "key": {
+    "+": {
+      "item": "minecraft:nether_star"
+    },
+    "C": {
+      "item": "bleeding-edge:carbon_ingot"
+    },
+    "T": {
+      "item": "bleeding-edge:technology"
+    }
+  },
+  "pattern": [
+    "CCCCC",
+    "CTTTC",
+    "CT+TC",
+    "CTTTC",
+    "CCCCC"
+  ],
+  "result": {
+    "item": "bleeding-edge:tacticore"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,32 @@
+{
+  "type": "bleeding-edge:assembler_recipe",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "C": {
+      "item": "bleeding-edge:carbon_ingot"
+    },
+    "G": {
+      "item": "minecraft:blue_stained_glass_pane"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "T": {
+      "item": "bleeding-edge:technology"
+    }
+  },
+  "pattern": [
+    " IC  ",
+    "AICCC",
+    "TTCGC",
+    "TTCCC",
+    " IC  "
+  ],
+  "result": {
+    "item": "bleeding-edge:shield_generator"
+  },
+  "show_notification": true
+}

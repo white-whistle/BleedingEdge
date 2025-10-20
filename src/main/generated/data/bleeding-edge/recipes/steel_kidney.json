@@ -1,0 +1,31 @@
+{
+  "type": "bleeding-edge:assembler_recipe",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "bleeding-edge:carbon_ingot"
+    },
+    "G": {
+      "item": "minecraft:green_stained_glass_pane"
+    },
+    "P": {
+      "item": "minecraft:poisonous_potato"
+    },
+    "S": {
+      "item": "minecraft:fermented_spider_eye"
+    },
+    "T": {
+      "item": "bleeding-edge:technology"
+    }
+  },
+  "pattern": [
+    " CC ",
+    "CGGC",
+    "CSPC",
+    " TT "
+  ],
+  "result": {
+    "item": "bleeding-edge:steel_kidney"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,32 @@
+{
+  "type": "bleeding-edge:assembler_recipe",
+  "category": "equipment",
+  "key": {
+    "@": {
+      "item": "bleeding-edge:tacticore"
+    },
+    "E": {
+      "item": "minecraft:quartz"
+    },
+    "F": {
+      "item": "minecraft:golden_carrot"
+    },
+    "S": {
+      "item": "minecraft:glistering_melon_slice"
+    },
+    "T": {
+      "item": "bleeding-edge:technology"
+    }
+  },
+  "pattern": [
+    "TTETT",
+    "TSFST",
+    "EF@FE",
+    "TSFST",
+    "TTETT"
+  ],
+  "result": {
+    "item": "bleeding-edge:medicore"
+  },
+  "show_notification": true
+}

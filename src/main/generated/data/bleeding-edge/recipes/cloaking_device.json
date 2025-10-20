@@ -1,0 +1,29 @@
+{
+  "type": "bleeding-edge:assembler_recipe",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "bleeding-edge:carbon_ingot"
+    },
+    "E": {
+      "item": "minecraft:ender_eye"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "T": {
+      "item": "bleeding-edge:technology"
+    }
+  },
+  "pattern": [
+    "IIIII",
+    "I   I",
+    "ICCCI",
+    "ICTEC",
+    "CCTEC"
+  ],
+  "result": {
+    "item": "bleeding-edge:cloaking_device"
+  },
+  "show_notification": true
+}

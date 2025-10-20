@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "bleeding-edge:carbon_ingot"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "CRC",
+    "ICI",
+    " I "
+  ],
+  "result": {
+    "item": "bleeding-edge:brain_drill"
+  },
+  "show_notification": true
+}

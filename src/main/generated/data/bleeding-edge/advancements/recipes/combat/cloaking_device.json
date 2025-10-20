@@ -1,0 +1,100 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_assembly_slot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:assembly_slot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_basic_slot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:basic_slot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_carbon_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:carbon_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ender_eye": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:ender_eye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_iron_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_technology": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:technology"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bleeding-edge:cloaking_device"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_technology",
+      "has_carbon_ingot",
+      "has_iron_ingot",
+      "has_ender_eye",
+      "has_basic_slot",
+      "has_assembly_slot",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bleeding-edge:cloaking_device"
+    ]
+  },
+  "sends_telemetry_event": false
+}

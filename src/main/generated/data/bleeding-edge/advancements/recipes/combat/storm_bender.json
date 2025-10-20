@@ -1,0 +1,113 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_assembly_slot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:assembly_slot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_basic_slot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:basic_slot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_carbon_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:carbon_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_iron_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_lightning_rod": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:lightning_rod"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_redstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:redstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_technology": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:technology"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bleeding-edge:storm_bender"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_technology",
+      "has_carbon_ingot",
+      "has_lightning_rod",
+      "has_iron_ingot",
+      "has_redstone",
+      "has_basic_slot",
+      "has_assembly_slot",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bleeding-edge:storm_bender"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,29 @@
+{
+  "type": "bleeding-edge:assembler_recipe",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "bleeding-edge:carbon_ingot"
+    },
+    "H": {
+      "item": "bleeding-edge:heating_slot"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "T": {
+      "item": "bleeding-edge:technology"
+    }
+  },
+  "pattern": [
+    " I I ",
+    "ITCTI",
+    " CHC ",
+    "ITCTI",
+    " I I "
+  ],
+  "result": {
+    "item": "bleeding-edge:hover_pack"
+  },
+  "show_notification": true
+}

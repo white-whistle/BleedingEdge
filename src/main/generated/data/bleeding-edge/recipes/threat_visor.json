@@ -1,0 +1,25 @@
+{
+  "type": "bleeding-edge:assembler_recipe",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "bleeding-edge:carbon_ingot"
+    },
+    "G": {
+      "item": "minecraft:red_stained_glass_pane"
+    },
+    "T": {
+      "item": "bleeding-edge:technology"
+    }
+  },
+  "pattern": [
+    "C  C",
+    "C  C",
+    "TCCC",
+    "GG  "
+  ],
+  "result": {
+    "item": "bleeding-edge:threat_visor"
+  },
+  "show_notification": true
+}

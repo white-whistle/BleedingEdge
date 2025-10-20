@@ -1,0 +1,25 @@
+{
+  "type": "bleeding-edge:assembler_recipe",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "minecraft:crying_obsidian"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "T": {
+      "item": "bleeding-edge:technology"
+    }
+  },
+  "pattern": [
+    "OOOO",
+    "O  O",
+    "O  O",
+    "OTCO"
+  ],
+  "result": {
+    "item": "bleeding-edge:obsidian_sash"
+  },
+  "show_notification": true
+}

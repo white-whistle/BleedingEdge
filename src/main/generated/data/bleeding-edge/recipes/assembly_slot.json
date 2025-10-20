@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "bleeding-edge:carbon_ingot"
+    },
+    "S": {
+      "item": "bleeding-edge:basic_slot"
+    },
+    "T": {
+      "item": "minecraft:crafting_table"
+    }
+  },
+  "pattern": [
+    "CTC",
+    "TST",
+    "CTC"
+  ],
+  "result": {
+    "item": "bleeding-edge:assembly_slot"
+  },
+  "show_notification": true
+}

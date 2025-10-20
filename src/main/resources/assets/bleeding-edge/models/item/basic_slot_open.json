@@ -1,0 +1,6 @@
+{
+  "parent": "bleeding-edge:item/basic_slot",
+  "textures": {
+    "layer0": "bleeding-edge:item/basic_slot_open"
+  }
+}

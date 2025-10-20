@@ -1,0 +1,32 @@
+{
+  "type": "bleeding-edge:assembler_recipe",
+  "category": "equipment",
+  "key": {
+    "@": {
+      "item": "bleeding-edge:tacticore"
+    },
+    "E": {
+      "item": "minecraft:emerald"
+    },
+    "F": {
+      "item": "minecraft:fermented_spider_eye"
+    },
+    "S": {
+      "item": "minecraft:spider_eye"
+    },
+    "T": {
+      "item": "bleeding-edge:technology"
+    }
+  },
+  "pattern": [
+    "TTETT",
+    "TSFST",
+    "EF@FE",
+    "TSFST",
+    "TTETT"
+  ],
+  "result": {
+    "item": "bleeding-edge:spidercore"
+  },
+  "show_notification": true
+}

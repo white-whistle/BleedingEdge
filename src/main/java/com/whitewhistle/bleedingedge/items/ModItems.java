@@ -25,13 +25,15 @@ public class ModItems {
     public static final Item HEATING_SLOT = registerItem("heating_slot", new HeatingSlotItem(new FabricItemSettings().maxCount(1)));
     public static final Item REPAIR_SLOT = registerItem("repair_slot", new RepairSlotItem(new FabricItemSettings().maxCount(1)));
     public static final Item BRAIN_JAR = registerItem("brain_jar", new BrainJarItem(new FabricItemSettings().maxCount(1)));
-    public static final Item BASIC_SLOT = registerItem("basic_slot", new SlotItem(new FabricItemSettings().maxCount(1)));
+    public static final Item BASIC_SLOT = registerItem("basic_slot", new BasicSlotItem(new FabricItemSettings().maxCount(1)));
+    public static final Item ASSEMBLY_SLOT = registerItem("assembly_slot", new AssemblySlotItem(new FabricItemSettings().maxCount(1)));
+    public static final Item CREATIVE_ASSEMBLY_SLOT = registerItem("creative_assembly_slot", new AssemblySlotItem(new FabricItemSettings().maxCount(1)));
 
     // gadgets
     public static final Item CLOAKING_DEVICE = registerItem("cloaking_device", new CloakingDeviceItem(new FabricItemSettings().maxCount(1)));
     public static final Item SHIELD_GENERATOR = registerItem("shield_generator", new ShieldGeneratorItem(new FabricItemSettings().maxCount(1)));
     public static final Item NIGHT_VISION_GOGGLES = registerItem("night_vision_goggles", new NightVisionGogglesItem(new FabricItemSettings().maxCount(1)));
-    public static final Item THREAT_VISOR = registerItem("threat_visor", new ThreatVisorItem(new FabricItemSettings().maxCount(1))); // TODO: render threat
+    public static final Item THREAT_VISOR = registerItem("threat_visor", new ThreatVisorItem(new FabricItemSettings().maxCount(1)));
     public static final Item HOVER_PACK = registerItem("hover_pack", new HoverPackItem(new FabricItemSettings().maxCount(1)));
     public static final Item LIQUID_COOLING = registerItem("liquid_cooling", new LiquidCoolingItem(new FabricItemSettings().maxCount(1)));
     public static final Item STEEL_KIDNEY = registerItem("steel_kidney", new SteelKidneyItem(new FabricItemSettings().maxCount(1)));
@@ -64,11 +66,11 @@ public class ModItems {
 
     // TODO
     // tools
-    public static final Item ASSEMBLY_SLOT = registerItem("assembly_slot", new AssemblySlotItem(new FabricItemSettings().maxCount(1)));
+
 
     // gadgets
-    public static final Item CREEPER_SANDALS = registerItem("creeper_sandals", new Item(new FabricItemSettings().maxCount(1))); // + belt slots
-    public static final Item SLIME_SOCKS = registerItem("slime_socks", new Item(new FabricItemSettings().maxCount(1))); // + belt slots
+    // public static final Item CREEPER_SANDALS = registerItem("creeper_sandals", new Item(new FabricItemSettings().maxCount(1))); // + belt slots
+    // public static final Item SLIME_SOCKS = registerItem("slime_socks", new Item(new FabricItemSettings().maxCount(1))); // + belt slots
 
     // // consumable
     // public static final Item STIM = registerItem("stim", new Item(new FabricItemSettings().maxCount(1)));

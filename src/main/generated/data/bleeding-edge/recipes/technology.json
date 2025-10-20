@@ -1,0 +1,27 @@
+{
+  "type": "bleeding-edge:assembler_recipe",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "bleeding-edge:carbon_ingot"
+    },
+    "E": {
+      "item": "bleeding-edge:eureka"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "RIR",
+    "CEC",
+    "RIR"
+  ],
+  "result": {
+    "item": "bleeding-edge:technology"
+  },
+  "show_notification": true
+}

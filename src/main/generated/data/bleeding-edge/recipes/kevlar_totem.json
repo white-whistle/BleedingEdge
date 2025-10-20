@@ -1,0 +1,35 @@
+{
+  "type": "bleeding-edge:assembler_recipe",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "bleeding-edge:carbon_ingot"
+    },
+    "G": {
+      "item": "minecraft:lime_stained_glass_pane"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "T": {
+      "item": "bleeding-edge:technology"
+    },
+    "b": {
+      "item": "bleeding-edge:small_brain"
+    },
+    "g": {
+      "item": "minecraft:golden_apple"
+    }
+  },
+  "pattern": [
+    " CCC ",
+    " GbG ",
+    "ICTCI",
+    " CgC ",
+    " CCC "
+  ],
+  "result": {
+    "item": "bleeding-edge:kevlar_totem"
+  },
+  "show_notification": true
+}

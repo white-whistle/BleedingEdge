@@ -1,0 +1,87 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_assembly_slot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:assembly_slot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_basic_slot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:basic_slot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_brain": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:brain"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_carbon_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:carbon_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_technology": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:technology"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bleeding-edge:steel_brain"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_technology",
+      "has_carbon_ingot",
+      "has_brain",
+      "has_basic_slot",
+      "has_assembly_slot",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bleeding-edge:steel_brain"
+    ]
+  },
+  "sends_telemetry_event": false
+}

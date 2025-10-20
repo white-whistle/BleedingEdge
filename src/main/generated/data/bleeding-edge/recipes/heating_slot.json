@@ -1,0 +1,24 @@
+{
+  "type": "bleeding-edge:assembler_recipe",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:iron_bars"
+    },
+    "L": {
+      "item": "minecraft:lava_bucket"
+    },
+    "S": {
+      "item": "bleeding-edge:basic_slot"
+    }
+  },
+  "pattern": [
+    "LBL",
+    "BSB",
+    "LBL"
+  ],
+  "result": {
+    "item": "bleeding-edge:heating_slot"
+  },
+  "show_notification": true
+}

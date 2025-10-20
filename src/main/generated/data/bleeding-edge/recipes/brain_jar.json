@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "bleeding-edge:carbon_ingot"
+    },
+    "G": {
+      "item": "minecraft:glass_pane"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "G G",
+    "CCC"
+  ],
+  "result": {
+    "item": "bleeding-edge:brain_jar"
+  },
+  "show_notification": true
+}

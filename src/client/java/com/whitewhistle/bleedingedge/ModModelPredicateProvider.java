@@ -31,8 +31,10 @@ public class ModModelPredicateProvider {
     public static void registerPredicates() {
 
         var chargedPredicate = ModIdentifier.of("charged");
+        var hasSlotPredicate = ModIdentifier.of("has_item");
 
         ModelPredicateProviderRegistry.register(ModItems.BREACH_HAMMER, chargedPredicate, (stack, world, entity, seed) -> ModComponents.CHARGED.get(stack) ? 1 : 0);
+        ModelPredicateProviderRegistry.register(ModItems.BASIC_SLOT, hasSlotPredicate, (stack, world, entity, seed) -> !ModComponents.PROCESSING_STACK.get(stack).isEmpty() ? 1 : 0);
 
         registerCustomBow(ModItems.STORM_BENDER);
 

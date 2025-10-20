@@ -1,0 +1,18 @@
+{
+  "type": "bleeding-edge:assembler_recipe",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "pattern": [
+    "FF",
+    "FF"
+  ],
+  "result": {
+    "count": 16,
+    "item": "bleeding-edge:nutrient_block"
+  },
+  "show_notification": true
+}

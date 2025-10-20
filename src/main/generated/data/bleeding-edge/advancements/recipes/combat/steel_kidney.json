@@ -1,0 +1,113 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_assembly_slot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:assembly_slot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_basic_slot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:basic_slot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_carbon_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:carbon_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_fermented_spider_eye": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:fermented_spider_eye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:glass"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_poisonous_potato": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:poisonous_potato"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_technology": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:technology"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bleeding-edge:steel_kidney"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_technology",
+      "has_carbon_ingot",
+      "has_glass",
+      "has_fermented_spider_eye",
+      "has_poisonous_potato",
+      "has_basic_slot",
+      "has_assembly_slot",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bleeding-edge:steel_kidney"
+    ]
+  },
+  "sends_telemetry_event": false
+}

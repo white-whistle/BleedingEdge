@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "bleeding-edge:item/basic_slot"
+  },
+  "overrides": [
+    {
+      "predicate": { "bleeding-edge:has_item": 1 },
+      "model": "bleeding-edge:item/basic_slot_open"
+    }
+  ]
+}

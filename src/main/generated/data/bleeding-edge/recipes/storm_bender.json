@@ -1,0 +1,32 @@
+{
+  "type": "bleeding-edge:assembler_recipe",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "bleeding-edge:carbon_ingot"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "L": {
+      "item": "minecraft:lightning_rod"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "T": {
+      "item": "bleeding-edge:technology"
+    }
+  },
+  "pattern": [
+    " CCCC",
+    "CITRL",
+    "CTR  ",
+    "CR   ",
+    "C    "
+  ],
+  "result": {
+    "item": "bleeding-edge:storm_bender"
+  },
+  "show_notification": true
+}

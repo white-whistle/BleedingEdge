@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "bleeding-edge:item/slime_socks"
+    "layer0": "bleeding-edge:item/creative_assembly_slot"
   }
 }

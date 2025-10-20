@@ -1,0 +1,29 @@
+{
+  "type": "bleeding-edge:assembler_recipe",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "bleeding-edge:carbon_ingot"
+    },
+    "S": {
+      "item": "bleeding-edge:basic_slot"
+    },
+    "T": {
+      "item": "bleeding-edge:technology"
+    },
+    "c": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    " ccc ",
+    "cTCTc",
+    "cCSCc",
+    "cTCTc",
+    " ccc "
+  ],
+  "result": {
+    "item": "bleeding-edge:tesla_pack"
+  },
+  "show_notification": true
+}

@@ -7,6 +7,7 @@ import com.whitewhistle.bleedingedge.items.ModItems;
 import com.whitewhistle.bleedingedge.items.impl.BrainDrillItem;
 import com.whitewhistle.bleedingedge.nbt.ModComponents;
 import com.whitewhistle.bleedingedge.network.ModServerPacketHandler;
+import com.whitewhistle.bleedingedge.recipe.ModRecipeTypes;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -28,6 +29,7 @@ public class BleedingEdge implements ModInitializer {
         ModItemGroups.registerGroups();
         ModFuelItems.init();
         ModServerPacketHandler.init();
+        ModRecipeTypes.register();
 
         BrainDrillItem.registerDeathListeners();
 

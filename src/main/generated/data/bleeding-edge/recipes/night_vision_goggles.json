@@ -1,0 +1,28 @@
+{
+  "type": "bleeding-edge:assembler_recipe",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "bleeding-edge:carbon_ingot"
+    },
+    "G": {
+      "item": "minecraft:lime_stained_glass_pane"
+    },
+    "N": {
+      "item": "minecraft:daylight_detector"
+    },
+    "T": {
+      "item": "bleeding-edge:technology"
+    }
+  },
+  "pattern": [
+    "C  C",
+    "CNNC",
+    "GTTG",
+    "CGGC"
+  ],
+  "result": {
+    "item": "bleeding-edge:night_vision_goggles"
+  },
+  "show_notification": true
+}

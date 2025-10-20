@@ -1,0 +1,126 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_assembly_slot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:assembly_slot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_basic_slot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:basic_slot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_carbon_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:carbon_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_golden_apple": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:golden_apple"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_iron_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_lime_stained_glass_pane": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:lime_stained_glass_pane"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_small_brain": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:small_brain"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_technology": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bleeding-edge:technology"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bleeding-edge:kevlar_totem"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_technology",
+      "has_carbon_ingot",
+      "has_small_brain",
+      "has_iron_ingot",
+      "has_golden_apple",
+      "has_lime_stained_glass_pane",
+      "has_basic_slot",
+      "has_assembly_slot",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bleeding-edge:kevlar_totem"
+    ]
+  },
+  "sends_telemetry_event": false
+}
