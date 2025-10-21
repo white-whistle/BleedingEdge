@@ -23,6 +23,9 @@ entities killed by `Brain Damage` will reward the player with their brains.
 <p>
   <img width="417" height="573" alt="image" src="https://github.com/user-attachments/assets/33d7ac53-91f2-4152-ad00-14f6bbc2a094" />
 </p>
+<p>
+  <img src="https://github.com/white-whistle/BleedingEdge/blob/main/raw/brain-drill-demo.gif?raw=true" />
+</p>
 
 * Players and Neutrals - Small Brain
 * Hostiles - Rotten Brain
