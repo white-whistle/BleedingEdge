@@ -1,4 +1,9 @@
 # Bleeding Edge
+<p>
+<a href="https://www.curseforge.com/minecraft/mc-mods/bleeding-edge">
+  <img alt="Static Badge" src="https://img.shields.io/badge/CurseForge-orange">
+</a>
+</p>
 a futuristic minecraft gadget mod (Curseforge Modjam 2025 submission)
 
 this mod aims to add interesting trinkets with futuristic look and feel. meant to compliment and complicate PVP gameplay.
