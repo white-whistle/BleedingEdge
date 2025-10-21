@@ -33,6 +33,9 @@ when the brain finishes thinking, it will manifest `Eureka`!
 <p align="left">
 <img width="222" height="149" alt="image" src="https://github.com/user-attachments/assets/55c51b63-19b5-4ac7-b6f3-01e97af848e8" />
 </p>
+<p>
+<img alt="image" src="https://github.com/white-whistle/BleedingEdge/blob/main/raw/brain-jar-demo.gif?raw=true" />
+</p>
 
 use Eureka to create `Technology` past your understanding
 <p align="left">
@@ -50,8 +53,23 @@ this gives us access to `Assembler Crafting` recipes.
 Crafting with the assembly slot is easy, we first need to arrange our crafting grid using basic slots - make sure there are no stray slots anywhere messing with the assembler (the assembly slot looks for any basic slot item in the inventory it is stored)
 Right Click items in/out of basic slots to define the recipe, once everything is in place
 Right Click the assembly slot, if the recipe is valid your item will be crafted immediately and the items in the basic slots will get deducted, if the recipe is invalid it will make an angry sound..
+<p>
+  <img src="https://github.com/white-whistle/BleedingEdge/blob/main/raw/assembler-demo.gif?raw=true" />
+</p>
 
-#### Recipes
+### Danger
+Be careful though, each gadget gives you `Threat Score`, when some entities spawn - they will try to match your threat score (scales with difficulty)
+<p>
+<img width="993" height="714" alt="image" src="https://github.com/user-attachments/assets/eb7712df-756f-4cbb-80d7-7c76c4f4b198" />
+</p>
+
+### Toggled Items
+some items need to be enabled to give the player their benefits, to toggle an item's state - either invoke its bound keybind or simply click on the stack
+<p>
+  <img src="https://github.com/white-whistle/BleedingEdge/blob/main/raw/toggled-item-demo.gif?raw=true" />
+</p>
+
+### Assembler Recipes
 <p align="left">
 <img width="295" height="157" alt="image" src="https://github.com/user-attachments/assets/9cd91248-f1d1-4b35-9bbc-4e7de9c331d6" />
 </p>
