@@ -2,6 +2,7 @@ package com.whitewhistle.bleedingedge.items.impl;
 
 import com.whitewhistle.bleedingedge.common.CommonBridge;
 import com.whitewhistle.bleedingedge.effects.ModStatusEffects;
+import com.whitewhistle.bleedingedge.entity.MobThreatSystem;
 import com.whitewhistle.bleedingedge.entity.ModEntityAttributes;
 import com.whitewhistle.bleedingedge.items.ElectricToggledItem;
 import dev.emi.trinkets.api.SlotReference;
@@ -42,6 +43,7 @@ public class ThreatVisorItem extends ModTrinketItem implements ElectricToggledIt
         var player = CommonBridge.INSTANCE.getClientPlayer();
         if (player != null) {
             tooltip.add(Text.translatable("tooltip.bleeding-edge.threat_visor.description.own_threat", (int)player.getAttributeValue(ModEntityAttributes.THREAT)).styled(s -> s.withColor(Formatting.GRAY)));
+            tooltip.add(Text.translatable("tooltip.bleeding-edge.threat_visor.description.local_threat_scaling", (int) MobThreatSystem.getScaledThreat(player)).styled(s -> s.withColor(Formatting.GRAY)));
         }
 
         tooltip.add(Text.empty());

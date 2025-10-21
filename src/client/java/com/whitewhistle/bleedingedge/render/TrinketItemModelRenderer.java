@@ -68,6 +68,11 @@ public class TrinketItemModelRenderer implements TrinketRenderer {
             // generic biped entity render
             matrices.push();
 
+            if (entity.isBaby()) {
+                matrices.scale(0.5f,0.5f, 0.5f);
+                matrices.translate(0, 1.5f, 0);
+            }
+
             switch (slotReference.inventory().getSlotType().getName()) {
                 case "face" -> {
                     translateToBipedFace(matrices, bipedEntityModel, headYaw, headPitch);
@@ -105,7 +110,38 @@ public class TrinketItemModelRenderer implements TrinketRenderer {
             matrices.pop();
         } else {
             var slotName = slotReference.inventory().getSlotType().getName();
-            if (!slotName.equals("hat")) return;
+            if (!slotName.equals("hat")) {
+                matrices.push();
+
+                var bb = entity.getBoundingBox();
+
+                matrices.translate(0, 1.5, 0);
+                matrices.translate(0, -entity.getHeight() / 2f, 0);
+
+                matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
+
+                switch (slotName) {
+                    case "face" -> {
+                        matrices.translate(0, bb.getYLength() * 0.3f, bb.getZLength() * -0.4f);
+                    }
+                    case "back" -> {
+                        matrices.translate(0, 0, bb.getZLength() * 0.4f);
+                    }
+                    case "belt" -> {
+                        matrices.translate(0, bb.getYLength() * -0.3f, bb.getZLength() * -0.4f);
+                    }
+                    case "necklace" -> {
+                        matrices.translate(0, 0, bb.getZLength() * -0.4f);
+                    }
+                }
+
+
+                matrices.scale(0.6f, 0.6f, 1f);
+
+                MinecraftClient.getInstance().getItemRenderer().renderItem(stack, ModelTransformationMode.FIXED, light, OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, null, 0);
+                matrices.pop();
+                return;
+            };
 
             // super generic renderer
             matrices.push();

@@ -73,6 +73,7 @@
   "tooltip.bleeding-edge.supply_drop.description2": "Equips entities with random gadgets",
   "tooltip.bleeding-edge.threat_visor.description": "Displays threat level of visible entities",
   "tooltip.bleeding-edge.threat_visor.description.own_threat": "[your threat: %d]",
+  "tooltip.bleeding-edge.threat_visor.description.local_threat_scaling": "[mob threat: %d]",
   "tooltip.bleeding-edge.steel_brain.description": "Consume to gain a core slot",
   "tooltip.bleeding-edge.toggled-item.description": "[Status: %s]",
   "tooltip.bleeding-edge.toggled-item.on": "ON",

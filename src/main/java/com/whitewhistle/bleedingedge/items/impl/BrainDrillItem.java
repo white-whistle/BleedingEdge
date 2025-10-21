@@ -123,4 +123,9 @@ public class BrainDrillItem extends ModTrinketItem{
         tooltip.add(Text.translatable("tooltip.bleeding-edge.brain_drill.description2").styled(s -> s.withColor(Formatting.GRAY)));
         tooltip.add(Text.translatable("tooltip.bleeding-edge.brain_drill.description3").styled(s -> s.withColor(Formatting.GRAY)));
     }
+
+    @Override
+    public boolean canSpawnWithMob(MobEntity mob) {
+        return false;
+    }
 }
