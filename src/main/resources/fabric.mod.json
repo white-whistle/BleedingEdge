@@ -3,15 +3,15 @@
 	"id": "bleeding-edge",
 	"version": "${version}",
 	"name": "Bleeding Edge",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A futuristic gadget mod",
 	"authors": [
-		"Me!"
+		"2mer"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/white-whistle/BleedingEdge",
+		"sources": "https://github.com/white-whistle/BleedingEdge"
 	},
-	"license": "CC0-1.0",
+	"license": "All rights reserved",
 	"icon": "assets/bleeding-edge/icon.png",
 	"environment": "*",
 	"entrypoints": {
