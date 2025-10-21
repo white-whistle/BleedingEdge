@@ -1,3 +1,5 @@
+<img width="200" height="200" src="https://github.com/white-whistle/BleedingEdge/blob/main/src/main/resources/assets/bleeding-edge/icon.png?raw=true" />
+
 # Bleeding Edge
 <p>
 <a href="https://www.curseforge.com/minecraft/mc-mods/bleeding-edge">
