@@ -59,6 +59,15 @@ this gives us access to `Assembler Crafting` recipes.
   <img width="222" height="147" alt="image" src="https://github.com/user-attachments/assets/d3bf4d84-6129-4b0b-8481-c9f7a4bae843" />
 </p>
 
+### Slot items
+bleeding edge likes inventory interactions (a lot), so its time to get to know `Slot Item`s!
+you can click a single item into a slot item by hovering over it with a held stack - and right clicking over it.
+to take an a single item out - right click the slot with no held stack.
+if you want to insert an entire stack or alternatively empty the contents of a slot - do the same but this time hold the slot and click over a stack / empty inventory slot
+<p>
+  <img src="https://github.com/white-whistle/BleedingEdge/blob/main/raw/new-slot-look.gif?raw=true" />
+</p>
+
 ### Assembler Crafting
 Crafting with the assembly slot is easy, we first need to arrange our crafting grid using basic slots - make sure there are no stray slots anywhere messing with the assembler (the assembly slot looks for any basic slot item in the inventory it is stored)
 Right Click items in/out of basic slots to define the recipe, once everything is in place
