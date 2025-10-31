@@ -142,7 +142,7 @@ When active - allows you to see the gadget threat level of entities (yourself in
 <img width="434" height="290" alt="image" src="https://github.com/user-attachments/assets/5eda812b-5247-4956-9ebd-bfe83cb9976a" />
 </p>
 
-#### Night vision goggles
+#### Night Vision Goggles
 When active, it gives the user `IR vision` - a monochrome version of the night vision buff, The key difference - this allows you to see invisible entities normally. a great counter to an unsuspecting `Cloaking Device` user
 
 <p align="left">
@@ -156,30 +156,66 @@ Great item for escaping combat / ambushing, or just fast travel through the neth
 <img width="434" height="292" alt="image" src="https://github.com/user-attachments/assets/9d45a3a0-2dec-44e3-b6e3-f8702c9ea0b1" />
 </p>
 
+#### Steel Brain
+Thinks faster than a smart brain.
+Can be consumed to augment its user with a `head/core` slot.
+Can also be extracted from the user using brain damage.
+
 <p align="left">
 <img width="503" height="362" alt="image" src="https://github.com/user-attachments/assets/8fb7a25a-c7a6-4554-93ce-79fe3e3ddab4" />
 </p>
+
+#### Shield Generator
+While active and out of combat (have not received damage for 5 seconds), this gadget will grant the user 5 absorption hearts.
+
 <p align="left">
 <img width="506" height="362" alt="image" src="https://github.com/user-attachments/assets/8cecdc61-a88a-48b9-84aa-f4b2dc7eadc9" />
 </p>
+
+#### Hover Pack
+While active, grants the user creative flight capabilities. However, being struck with EMP while in mid air will disable the flight as well as the fall damage protection - this can hurt a bit
+
 <p align="left">
 <img width="506" height="363" alt="image" src="https://github.com/user-attachments/assets/96491045-7993-45ab-93da-ef2a9f0a3e2e" />
 </p>
+
+#### Storm Bender
+This bow conducts lightning through the user and fires an EMP beam, this beam deals lightning damage. direct hits deal more damage than the AOE blast near the impact point.
+All hit entities (user included) are electrecuted by this process and suffer the EMP debuff.
+This item can malfunction if not fully charged - and will result in an EMP blast around the user.
+
 <p align="left">
 <img width="504" height="361" alt="image" src="https://github.com/user-attachments/assets/35a0563d-222b-429d-ba9c-0c6b40699e53" />
 </p>
+
+#### Cloaking Device
+When active, grants the user the `Cloaked` buff, this causes the user to be completely invisible (armor included). this status also does not emit particle effects.
+Cloaked entities can still be seen using IR vision.
+
 <p align="left">
 <img width="504" height="364" alt="image" src="https://github.com/user-attachments/assets/fb317943-32b1-41c8-a0d8-e587f715e912" />
 </p>
+
+#### Tesla Pack
+When active, will create an EMP blast around the user, damaging and debuffing entities in a 5 block radius. the user takes half damage.
+This item will try to fire as fast as it can but unfortunately this technology is also affected by EMP resulting in a balanced cooldown between EMP bursts.
+
 <p align="left">
 <img width="510" height="366" alt="image" src="https://github.com/user-attachments/assets/c2988294-9026-4b60-90d1-d890db6ff3a9" />
 </p>
+
+#### Kevlar Totem
+This innovative technology redesigns how totems are used, while it is no longer effective in the hand/offhand slots, it can stop a bullet to the chest pretty well (you wear the totem on your chest).
+this gadget meant to help the user recollect himself after a fatal hit, so it also grants it with temporary cloaking. If you spot this gadget on an enemy's chest, hitting him with EMP is a great way to make this item not trigger at deaths door.
+
 <p align="left">
 <img width="505" height="365" alt="image" src="https://github.com/user-attachments/assets/981dd239-9d9b-425f-9224-7ab61bc8384d" />
 </p>
 
 ### Cores
-Cores are equippable in the `head/core` slot, to gain access to this slot - consume a `Steel Brain`. this upgrade persists death, if you for some reason want to remove it - dying to brain damage will extract the steel brain
+Cores are equippable in the `head/core` slot, to gain access to this slot - consume a `Steel Brain`. this upgrade persists death, if you for some reason want to remove it - dying to brain damage will extract the steel brain.
+
+Cores are a special kind of "companion" gadget that **greatly** buffs the user's stats, and grant additional gadget slots. these items usually have high threat scores.
 
 <p align="left">
 <img width="368" height="192" alt="image" src="https://github.com/user-attachments/assets/bea425cb-559d-4dab-b920-44f246819a69" />
@@ -189,12 +225,22 @@ Cores are equippable in the `head/core` slot, to gain access to this slot - cons
 </p>
 the standard `TACTICore` can be upgraded to fit different playstyles
 
+#### SPIDERCore
+Grants the user more eyes (+ face slots), more legs (+leg slots), move speed, and attack damage.
+meant for mobile scout-type playstyle
+
 <p align="left">
 <img width="507" height="364" alt="image" src="https://github.com/user-attachments/assets/a5737ad1-1376-4b40-85b4-63827b4ffa11" />
 </p>
+
+#### MEDICore
+Grants the user more belt and neck slots (so you can resist most status effects), bonus HP, and move speed.
 <p align="left">
 <img width="504" height="362" alt="image" src="https://github.com/user-attachments/assets/dd4b4884-b389-4ca1-bc5e-f80e78590b24" />
 </p>
+
+#### HEAVYCore
+Sacrificing mobility and some utility (-neck -belt), grants the user an additional `chest/back` slot, health, armor, and armor toughness.
 <p align="left">
 <img width="504" height="361" alt="image" src="https://github.com/user-attachments/assets/c1d88497-291d-46ca-81ae-babb2b056386" />
 </p>
