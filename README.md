@@ -89,33 +89,73 @@ some items need to be enabled to give the player their benefits, to toggle an it
 </p>
 
 ### Assembler Recipes
+
+#### Nutrient Block
+Not very tasty, but packed with nutrients.
+
+a great efficient food source that takes less time to consume than standard food sources of matching hunger values. Brains love this stuff
+
 <p align="left">
 <img width="295" height="157" alt="image" src="https://github.com/user-attachments/assets/9cd91248-f1d1-4b35-9bbc-4e7de9c331d6" />
 </p>
+
+#### Heating Slot
+a `Slot Item`. items placed inside this slot will be smelted and popped right into the players inventory (or the world if full).
+can also be used as an infinite fuel source in furnaces / generators. but it only smelts for 1 burn tick per tick.
+
 <p align="left">
 <img width="365" height="225" alt="image" src="https://github.com/user-attachments/assets/9b9f9389-1d3c-4457-9930-40307de502c9" />
 </p>
+
+#### Repair Slot
+a `Slot Item`. damaged items placed inside this slot will be repaired.
+
 <p align="left">
 <img width="362" height="220" alt="image" src="https://github.com/user-attachments/assets/a0ae1174-ed38-4d73-af14-5fe8e90d5c9b" />
 </p>
+
+#### Breach Hammer
+A melee hammer that is charged like a crossbow (does not require ammo). a charged breach hammer attack is known to bash most heads in (tldr, it deals a lot of damage).
+This weapon is so dangerous when charged - a held charged breach hammer will raise your threat score (while the uncharged hammer will not)
+
 <p align="left">
 <img width="361" height="294" alt="image" src="https://github.com/user-attachments/assets/1e56fbea-6e13-4e67-831c-3b9cd8c8c018" />
 </p>
+
+#### Steel Kidney
+While active - grants the user the `Antidote` status. effectively nullifying any posion damage that meets its user.
+
 <p align="left">
 <img width="434" height="291" alt="image" src="https://github.com/user-attachments/assets/ac413edc-a670-4e3d-b29a-e8c4dfffe085" />
 </p>
+
+#### Liquid Cooling
+Utilizing a captive snow golem, When active this gadget keeps its user in a comfortable temperature, even while taking a lava bath or personally attending burning person. (fire resistance)
 <p align="left">
 <img width="436" height="291" alt="image" src="https://github.com/user-attachments/assets/685d5756-aca1-4cee-871c-654b3ca7ea3e" />
 </p>
+
+#### Threat Visor
+When active - allows you to see the gadget threat level of entities (yourself included).
+
 <p align="left">
 <img width="434" height="290" alt="image" src="https://github.com/user-attachments/assets/5eda812b-5247-4956-9ebd-bfe83cb9976a" />
 </p>
+
+#### Night vision goggles
+When active, it gives the user `IR vision` - a monochrome version of the night vision buff, The key difference - this allows you to see invisible entities normally. a great counter to an unsuspecting `Cloaking Device` user
+
 <p align="left">
 <img width="433" height="292" alt="image" src="https://github.com/user-attachments/assets/db7013fc-3927-4e59-94b8-0bf0b593dc62" />
 </p>
+
+#### Obsidian Sash
+Apparently wearing an obsidian ring around your waist is a great way to carry around a nether portal. When this item is activated (via a bound hotkey) it will teleport toggle the player between the overworld/nether dimension (will malfunction if the user is in neither of those). the teleportation is not instant, and can be cancelled by activating again during the teleportation phase (denoted by the `Quantum Tunneling` status effect).
+Great item for escaping combat / ambushing, or just fast travel through the nether.
 <p align="left">
 <img width="434" height="292" alt="image" src="https://github.com/user-attachments/assets/9d45a3a0-2dec-44e3-b6e3-f8702c9ea0b1" />
 </p>
+
 <p align="left">
 <img width="503" height="362" alt="image" src="https://github.com/user-attachments/assets/8fb7a25a-c7a6-4554-93ce-79fe3e3ddab4" />
 </p>
