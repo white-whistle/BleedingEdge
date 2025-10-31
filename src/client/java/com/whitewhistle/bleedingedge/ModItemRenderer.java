@@ -48,22 +48,32 @@ public class ModItemRenderer {
     public static void drawItem(LivingEntity entity, World world, ItemStack stack, int x, int y, int seed, int z, Operation<Void> original, MatrixStack matrices) {
         var item = stack.getItem();
 
-        if (item instanceof SlotItem && ModComponents.PROCESSING_STACK.has(stack)) {
-            var processingStack = ModComponents.PROCESSING_STACK.get(stack);
+        if (item instanceof SlotItem slotItem) {
 
             // draw slot
-            original.call(entity, world, stack, x, y, seed, z);
+            if (slotItem.isLargeSlot()) {
+                matrices.push();
+                var scalar = 22f/16f;
+                matrices.translate(x,y,z);
+                matrices.scale(scalar, scalar, 1);
+                original.call(entity, world, stack, -2, -2, seed, z);
+                matrices.pop();
+            } else {
+                original.call(entity, world, stack, x, y, seed, z);
+            }
 
-            var scale = 0.5f;
+            if (ModComponents.PROCESSING_STACK.has(stack)) {
+                var processingStack = ModComponents.PROCESSING_STACK.get(stack);
 
-            // draw slot contents
-            matrices.push();
-            matrices.translate(x, y, z + 1);
-            matrices.scale(scale, scale, 1);
-            original.call(entity, world, processingStack, 8, 8, seed, 0);
-            matrices.pop();
+                var scale = 0.5f;
 
-
+                // draw slot contents
+                matrices.push();
+                matrices.translate(x, y, z + 1);
+                matrices.scale(scale, scale, 1);
+                original.call(entity, world, processingStack, 8, 8, seed, 0);
+                matrices.pop();
+            }
 
             return;
         }

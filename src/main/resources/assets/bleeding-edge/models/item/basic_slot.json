@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "bleeding-edge:item/basic_slot"
+    "layer0": "bleeding-edge:item/basic_slot_closed_large"
   },
   "overrides": [
     {

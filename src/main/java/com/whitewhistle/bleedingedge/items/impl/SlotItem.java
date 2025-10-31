@@ -178,6 +178,11 @@ public class SlotItem extends Item {
 
     }
 
+    public boolean isLargeSlot() {
+        return true;
+    }
+
     public record SlotItemTooltipData(ItemStack stack) implements TooltipData {
     }
+
 }

@@ -134,4 +134,9 @@ public class BrainJarItem extends SlotItem{
 
 
     }
+
+    @Override
+    public boolean isLargeSlot() {
+        return false;
+    }
 }
